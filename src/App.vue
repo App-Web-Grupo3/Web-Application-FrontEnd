@@ -1,17 +1,10 @@
 <script setup>
 
-import NavbarComponent from "@/components/navbar-component.vue";
-import FooterComponent from "@/components/footer-component.vue";
 </script>
 
 <template>
-  <header>
-    <navbar-component></navbar-component>
-  </header>
-
   <main>
     <router-view></router-view>
-    <footer-component></footer-component>
   </main>
 </template>
 
