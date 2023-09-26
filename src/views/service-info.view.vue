@@ -33,14 +33,14 @@ const services = ref([
       </div>
       <div class="end flex gap-5" style="flex-grow: 9999">
         <div class="info layout" v-for="(service, index) in services" :key="index">
-          <h1 class="title">Servicio {{ service.name }}</h1>
+          <h1 class="title">{{ $t('service') }} {{ service.name }}</h1>
           <div class="content flex gap-5 justify-content-between align-items-center">
             <galleria-component></galleria-component>
             <service-data-component :service="service"></service-data-component>
           </div>
         </div>
         <div class="feedback layout">
-          <h1 class="title">Comentarios</h1>
+          <h1 class="title">{{ $t('comment')}}</h1>
           <comment-component></comment-component>
         </div>
       </div>
@@ -51,6 +51,7 @@ const services = ref([
 </template>
 
 <style scoped>
+
   .service-info {
     width: 100%;
     min-height: 100vh;
@@ -60,7 +61,9 @@ const services = ref([
       padding-top: 5%;
     }
   }
-
+  .start {
+    padding: 1rem;
+  }
   .end {
     flex-grow: 9999;
     flex-direction: column;

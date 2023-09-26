@@ -14,6 +14,13 @@ const i18n = createI18n({
             email: 'Correo: ',
             phone: 'Teléfono: ',
             country: 'País: ',
+            service: 'Servicio',
+            comment: 'Comentario',
+            applyDiscount: 'Aplicar Descuento de',
+            summary: 'Resumen',
+            amount: 'Monto por X personas: ',
+            discount: 'Descuento: ',
+            total: 'Total: ',
         },
         en: {
             home: 'Home',
@@ -25,6 +32,13 @@ const i18n = createI18n({
             email: 'Email: ',
             phone: 'Phone: ',
             country: 'Country: ',
+            service: 'Service',
+            comment: 'Comment',
+            applyDiscount: 'Apply Discount of',
+            summary: 'Summary',
+            amount: 'Amount for X people: ',
+            discount: 'Discount: ',
+            total: 'Total: ',
         }
     }
 })

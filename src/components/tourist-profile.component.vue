@@ -11,8 +11,10 @@
     <template #content>
       <p>
         Aventurera en busca de nuevas experiencias. Mi pasión es explorar lugares lejanos y cercanos,
-        sumergirme en culturas diversas y capturar recuerdos en cada rincón del planeta. #ViajeroIncansable #MundoPorDescubrir
-      </p>
+        sumergirme en culturas diversas y capturar recuerdos en cada rincón del planeta.
+      </p> <br>
+      <p>#ViajeroIncansable</p>
+      <p>#MundoPorDescubrir</p>
     </template>
     <template #footer>
       <pv-button icon="pi pi-user-edit" label="Editar informacion" rounded class="edit-btn"/>
@@ -35,5 +37,8 @@
     width: 100%;
     background-color: var(--primary-color);
   }
+}
+.p-0 {
+  padding: 0;
 }
 </style>

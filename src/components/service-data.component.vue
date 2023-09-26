@@ -1,9 +1,16 @@
 <script setup>
 import { ref, defineProps } from "vue";
+import CalculateServiceComponent from "@/components/calculate-service.component.vue";
+import { useToast } from 'primevue/usetoast';
 
 const props = defineProps({
   service: Object
 });
+const toast = useToast();
+const successfulSaved = () => {
+  toast.add({ severity: 'success', summary: 'Favorite',
+    detail: 'Se añadió a lista de favoritos correctamente', life: 3000 });
+};
 </script>
 
 <template>
@@ -19,15 +26,16 @@ const props = defineProps({
         <li><b>{{ $t('country') }}</b><p>{{ service.country }}</p></li>
       </ul>
     </template>
-    <template #footer class="footer">
-      <pv-button icon="pi pi-check" label="Guardar"
-                 text class="btn"/>
-      <pv-button icon="pi pi-times" label="Calcular" style="margin-left: 0.5em"
-                 text class="btn"/>
-      <pv-button icon="pi pi-times" label="Comprar" style="margin-left: 0.5em"
-                 text class="btn"/>
+    <template #footer class="footer ">
+      <div class="flex flex-wrap gap-2">
+        <pv-toast />
+        <pv-button class="btn" label="Guardar" @click="successfulSaved()" />
+        <calculate-service-component></calculate-service-component>
+        <pv-button class="btn" label="Comprar" @click="successfulSaved()" />
+      </div>
     </template>
   </pv-card>
+
 </template>
 
 <style scoped>
@@ -35,10 +43,11 @@ const props = defineProps({
   border-radius: 20px;
   box-shadow: none;
   padding: 0;
-  .btn {
-    background-color: var(--primary-color);
-    color: white;
-    font-size: 0.8em;
-  }
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 0.8em;
 }
 </style>

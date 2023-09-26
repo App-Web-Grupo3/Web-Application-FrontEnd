@@ -24,7 +24,7 @@ const addComment = () => {
         placeholder="Comparte tu experiencia.."
         @keyup.enter="addComment"
     />
-    <button @click="addComment">Enviar</button>
+    <pv-button icon="pi pi-send" @click="addComment"/>
   </div>
   <div class="user-comment" v-for="(comment, index) in comments" :key="index">
     <div class="header flex align-items-center">
@@ -50,7 +50,7 @@ const addComment = () => {
     background-color: var(--primary-color);
     color: white;
     border-radius: 20px;
-    padding: 1rem 2em;
+    padding: 0.8rem 2em;
     border: none;
     font-size: 0.8em;
     &:hover {
