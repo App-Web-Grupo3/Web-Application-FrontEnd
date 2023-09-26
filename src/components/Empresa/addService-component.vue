@@ -9,19 +9,23 @@
                     <div class="img-logo">
                         <img src="https://acortar.link/vFAsSK" alt="logo" style="width: 70%" >
                     </div>
-                    <div class="contenido-empresa">
+                    <div class="contenido-empresa font-size">
                         <p class="sub">TravelNew</p>
                         <p class="negrita">travelnew@gmailcom</p>
                         <p class="curvo">Somos una empresa de transporte publico que realiza viajes dentro del país sin descuidar la seguridad y comodidad al cliente.</p>
 
+                        <div class="descripcionAdicional">
 
-                        <p class="negrita">Ubicación</p>
-                        <p> Maecenas ultricies, InNulla.</p>
-                        <p class="negrita">Ruc</p>
-                        <p>641478521</p>
-                        <p class="negrita">Teléfono</p>
-                        <p>+51 952364789 </p>
+                            <p class="negrita">Ubicación</p>
+                            <p> Maecenas ultricies, InNulla.</p>
+                            <p class="negrita">Ruc</p>
+                            <p>641478521</p>
+                            <p class="negrita">Teléfono</p>
+                            <p>+51 952364789 </p>
 
+                        </div>
+
+                        
                     </div>
 
                 </div>
@@ -32,7 +36,7 @@
                     <pv-scrollpanel style="width: 100%; height: 90%" class="custombar1">
                         <!-- Input para el título del servicio -->
                         <div class="p-float-label margin">
-                            <pv-inputtext id="nameService" v-model="title" />
+                            <pv-inputText id="nameService" v-model="title" />
                             <label for="nameService">Titulo del servicio</label>
                         </div>
 
@@ -134,6 +138,12 @@ export default {
 </script>
 
 <style>
+.descripcionAdicional{
+    margin-top: 10%;
+}
+.font-size{
+    font-size: 12px;
+}
 .curvo {
     font-style: italic;
 }

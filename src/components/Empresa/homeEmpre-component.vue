@@ -17,7 +17,7 @@
                            <div class="img-logo">
                                <img src="https://acortar.link/vFAsSK" alt="logo" style="width: 60%" >
                            </div>
-                           <div class="contenido-empresa">
+                           <div class="contenido-empresa font-size">
                                <p class="sub">TravelNew</p>
                                <p class="negrita">travelnew@gmailcom</p>
                                <p class="curvo">Somos una empresa de transporte publico que realiza viajes dentro del país sin descuidar la seguridad y comodidad al cliente.</p>
@@ -188,6 +188,9 @@ export default {
 
 
 <style scoped>
+.font-size{
+    font-size: 12px;
+}
 .flex {
     display: flex;
 
