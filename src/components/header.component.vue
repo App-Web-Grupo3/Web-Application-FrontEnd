@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "NavbarComponent",
+  name: "HeaderComponent",
   data() {
     return {
       menuItems: [
@@ -36,11 +36,11 @@ export default {
 </script>
 
 <template>
-  <pv-navbar :model="menuItems" class="nav">
+  <pv-menubar :model="menuItems" class="nav">
     <template #start>
       <a class="logo">UNIQUETRIP</a>
     </template>
-  </pv-navbar>
+  </pv-menubar>
 </template>
 
 <style scoped>
