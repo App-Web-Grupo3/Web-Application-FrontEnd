@@ -25,6 +25,7 @@ import SpeedDial from "primevue/speeddial";
 import Menu from "primevue/menu";
 import Avatar from "primevue/avatar";
 import Card from "primevue/card";
+import Galleria from "primevue/galleria";
 
 const app = createApp(App);
 
@@ -45,4 +46,5 @@ app.component('pv-speedDial', SpeedDial);
 app.component('pv-menu', Menu);
 app.component('pv-avatar', Avatar);
 app.component('pv-card', Card);
+app.component('pv-galleria', Galleria);
 app.mount('#app');
