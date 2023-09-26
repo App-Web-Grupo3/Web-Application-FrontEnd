@@ -26,6 +26,15 @@ import Menu from "primevue/menu";
 import Avatar from "primevue/avatar";
 import Card from "primevue/card";
 
+import Textarea from 'primevue/textarea';
+import FileUpload from 'primevue/fileupload';
+import ScrollPanel from 'primevue/scrollpanel';
+import SelectButton from 'primevue/selectbutton';
+import InputNumber from 'primevue/inputnumber';
+
+
+
+
 const app = createApp(App);
 
 app.use(i18n);
@@ -45,4 +54,12 @@ app.component('pv-speedDial', SpeedDial);
 app.component('pv-menu', Menu);
 app.component('pv-avatar', Avatar);
 app.component('pv-card', Card);
+
+
+app.component('pv-textarea', Textarea);
+app.component('pv-fileupload', FileUpload);
+app.component('pv-scrollpanel', ScrollPanel);
+app.component('pv-inputnumber', InputNumber);
+app.component('pv-selectbutton', SelectButton);
+
 app.mount('#app');
