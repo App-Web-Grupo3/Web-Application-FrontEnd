@@ -13,8 +13,8 @@ import AddServiceComponent from "./components/Empresa/addService-component.vue"
 const routes = [
     { path: "/", component: LandingView },  
     { path: "/destinations", component: DestinationsComponent },
-    { path: "/homeEmpre", component: HomeEmpreComponent },
-    {path: "/addService", component: AddServiceComponent},
+    { path: "/homeEmpresa", component: HomeEmpreComponent },
+    {path: "/agregarServicio", component: AddServiceComponent},
     {path: "/login", component: LoginComponent},
     {path: "/my-profile", component: MyProfileComponent},
     {path: "/contact-us", component: ContactUsComponent},
