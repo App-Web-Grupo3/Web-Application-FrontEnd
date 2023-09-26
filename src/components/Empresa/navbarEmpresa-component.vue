@@ -33,6 +33,7 @@ export default {
     padding: 0 20px;
     width: 100%;
     background-color: hsla(204, 74%, 31%, 0.7);
+    position: absolute;
 }
 
 .logo {

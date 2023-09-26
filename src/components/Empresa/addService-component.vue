@@ -1,13 +1,24 @@
 <template>
-<h1>Seccion de agregar
+    <header>
+              <navbarEmpresaComponent />
+        </header>
 
-</h1>
+        
+                <router-view>   
+                    
+            
+                </router-view>
 </template>
 
 <script>
+
+import navbarEmpresaComponent from './navbarEmpresa-component.vue';
+
 export default {
     name: "AddServiceComponent",
-
+    components: {
+        navbarEmpresaComponent,
+    }
 }
 </script>
 
