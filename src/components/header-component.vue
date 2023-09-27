@@ -38,7 +38,7 @@ export default {
 <template>
   <pv-menubar :model="menuItems" class="nav">
     <template #start>
-      <a class="logo">UNIQUETRIP</a>
+      <a class="logo">UNIQUETRIPS</a>
     </template>
   </pv-menubar>
 </template>

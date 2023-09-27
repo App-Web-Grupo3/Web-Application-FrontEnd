@@ -25,6 +25,12 @@ import SpeedDial from "primevue/speeddial";
 import Menu from "primevue/menu";
 import Avatar from "primevue/avatar";
 import Card from "primevue/card";
+import FocusTrap from 'primevue/focustrap';
+import Password from 'primevue/password';
+import Divider from 'primevue/divider';
+import Checkbox from 'primevue/checkbox';
+import RadioButton from 'primevue/radiobutton';
+
 
 const app = createApp(App);
 
@@ -45,4 +51,9 @@ app.component('pv-speedDial', SpeedDial);
 app.component('pv-menu', Menu);
 app.component('pv-avatar', Avatar);
 app.component('pv-card', Card);
+app.component('pv-password', Password);
+app.component('pv-divider', Divider);
+app.component('pv-checkBox', Checkbox);
+app.component('pv-radioButton', RadioButton);
+app.directive('focustrap', FocusTrap);
 app.mount('#app');

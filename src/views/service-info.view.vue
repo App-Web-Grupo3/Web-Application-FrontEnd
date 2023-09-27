@@ -1,6 +1,6 @@
 <script setup>
-import NavbarComponent from '../components/navbar.component.vue';
-import TouristProfile from "@/components/tourist-profile.component.vue";
+import NavbarComponent from '../components/navbar-component.vue';
+import TouristProfile from "@/components/tourist-profile-component.vue";
 </script>
 
 <template>
