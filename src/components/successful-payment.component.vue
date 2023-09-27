@@ -11,7 +11,7 @@ const visible = ref(false);
                :breakpoints="{ '960px': '75vw', '641px': '100vw' }">
 
       <div class="contenedor">
-        <h1 style="font-size: 30px;"><b>¡El pago a sido realizado con exito!</b> </h1>
+        <h1 style="font-size: 30px;"><b>¡El pago ha sido realizado con exito!</b> </h1>
       </div>
 
       <pv-card class="tourist-profile" style="width: 45rem">
@@ -19,16 +19,15 @@ const visible = ref(false);
         <template #content>
           <div class="content flex gap-5 justify-content-between align-items-center">
             <galleria-component></galleria-component>
-            <h1 > Alpinismo para principiantes en el Huascarán, se parte de la aventura de vivir  </h1>
+            <p> Alpinismo para principiantes en el Huascarán, se parte de la aventura de vivir  </p>
+            <br><b>Por:</b><p>agencia TravelNew</p>
             <ul>
-              <li><b>Por:</b><p>agencia TravelNew</p></li>
               <li><b>Fecha de Salida: </b><p>12/05/2023</p></li>
               <li><b>Total de Importe: </b><p>$500.00</p></li>
-              <div class="flex-auto">
-                <b>Total de personas: </b> <pv-inputNumber class="input-number" v-model="value2" inputId="minmax-buttons" mode="decimal" showButtons :min="0" :max="100" />
-              </div>
+              <li><b>Total de personas: </b><p>2</p></li>
             </ul>
           </div>
+
         </template>
       </pv-card>
 

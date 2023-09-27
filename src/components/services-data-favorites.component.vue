@@ -28,7 +28,6 @@ const successfulSaved = () => {
     <template #footer class="footer ">
       <div class="flex flex-wrap gap-2">
         <pv-toast />
-        <calculate-service-component></calculate-service-component>
         <pay-service-component></pay-service-component>
       </div>
     </template>

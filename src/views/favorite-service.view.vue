@@ -42,6 +42,14 @@ const services = ref([
             <galleria-component></galleria-component>
             <data-favorites-component :service="service"></data-favorites-component>
           </div>
+          <br><br><div class="content flex gap-5 justify-content-between align-items-center">
+            <galleria-component></galleria-component>
+            <data-favorites-component :service="service"></data-favorites-component>
+          </div>
+          <br><br><div class="content flex gap-5 justify-content-between align-items-center">
+            <galleria-component></galleria-component>
+            <data-favorites-component :service="service"></data-favorites-component>
+          </div>
         </div>
       </div>
     </div>
