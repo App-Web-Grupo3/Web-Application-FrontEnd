@@ -8,9 +8,11 @@ const value2 = ref(1);
 <template>
   <div class="save">
     <pv-button class="btn" label="Calcular"  @click="visible = true" />
-    <pv-dialog v-model:visible="visible" modal header="Personas" :style="{ width: '20rem' }" :breakpoints="{ '960px': '75vw', '641px': '100vw' }">
+    <pv-dialog v-model:visible="visible" modal header="Personas" :style="{ width: '20rem' }"
+               :breakpoints="{ '960px': '75vw', '641px': '100vw' }">
       <div class="flex-auto">
-        <pv-inputNumber class="input-number" v-model="value2" inputId="minmax-buttons" mode="decimal" showButtons :min="0" :max="100" />
+        <pv-inputNumber class="input-number" v-model="value2" inputId="minmax-buttons"
+                        mode="decimal" showButtons :min="0" :max="100" />
       </div>
       <label class="discount">{{ $t('applyDiscount')}}<span id="percentage">x</span>%</label>
       <pv-button class="btn-calculate btn" label="Aplicar" @click="visible = false" />
