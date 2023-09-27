@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue';
 
+const value = ref(' ');
 const visible = ref(false);
 const value2 = ref(1);
 
@@ -13,6 +14,11 @@ const value2 = ref(1);
                :breakpoints="{ '960px': '75vw', '641px': '100vw' }">
       <div class="flex-auto">
         <pv-inputNumber class="input-number" v-model="value2" inputId="minmax-buttons" mode="decimal" showButtons :min="0" :max="100" />
+      </div>
+      <br>
+      <div class="card flex justify-content-center">
+        <pv-inputMask id="basic" v-model="value" placeholder="MM/AA" slotChar="mm/yy" />
+        <pv-inputMask  id="basic" v-model="value" placeholder="CVC/CVV" slotChar="cvc/cvv" />
       </div>
 
       <pv-button class="btn-calculate btn" label="Aplicar" @click="visible = false" />
