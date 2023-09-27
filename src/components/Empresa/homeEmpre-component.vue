@@ -120,19 +120,43 @@
                <div class="div-col2">
 
                    <p class="sub"> Mis servicios</p>
-                   <pv-scrollpanel style="width: 100%; height: 80%" class="custombar1">
-                       <i class="pi pi-arrow-circle-up centrar" style="color: #C4C4C4"></i>
-                       <p class="opc">
-                           Aun no haz registrado ningun servicio en nuestra plataforma
-                       </p>
+                  
+                      <pv-scrollpanel style="width: 100%; height: 80%" class="custombar1">
+                     
+                        <div class="card flex align-items-center justify-content-center">
+        <pv-card style="width: 90%">
+            <template #header>
+                <img alt="user header" src="https://acortar.link/jXD7uj" style="float: left; margin-right: 10px; max-width: 30%;" />
+            </template>
+            <template #title style="clear: none; width: auto;"> Paquete premium </template>
+            <template #subtitle style="clear: none; width: auto;"> Card subtitle </template>
+            <template #content>
+                <p style="font-size: 13px;">
+    Expedición para alpinistas en El Huascarán. Oferta limitada por temporada.                </p>
+            </template>
+            <template #footer>
+        <pv-button icon="pi pi-check" label="Ver clientes" style="font-size: 12px; padding: 4px 8px;" />
+        <pv-button icon="pi pi-times" label="Eliminar" severity="secondary" style="font-size: 12px; padding: 4px 8px; margin-left: 0.5em;" />
+    </template>
+        </pv-card>
+    </div>
+
+
+                          
+
+
+                         
+
+                      </pv-scrollpanel>
+
                        <div class="btn">
+
 
                            <router-link to="/agregarServicio">
                                <pv-button label="Añadir ahora" plain rounded/>
                            </router-link>
 
                        </div>
-                   </pv-scrollpanel>
 
 
 

@@ -138,6 +138,10 @@ export default {
 </script>
 
 <style>
+input, textarea, select, button {
+    /* Otros estilos aquí */
+    border: 1px solid gray !important; /* Un estilo de borde diferente */
+}
 .descripcionAdicional{
     margin-top: 10%;
 }
