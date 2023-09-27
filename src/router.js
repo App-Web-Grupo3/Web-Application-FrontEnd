@@ -7,6 +7,8 @@ import NotFoundView from "@/views/not-found.view.vue";
 import ServiceInfoView from "@/views/service-info.view.vue";
 import HomeEmpreComponent from "./components/Empresa/homeEmpre-component.vue"
 import AddServiceComponent from "./components/Empresa/addService-component.vue"
+import FavoriteServiceView from "@/views/favorite-service.view.vue";
+
 
 
 const routes = [
@@ -18,7 +20,7 @@ const routes = [
     {path: "/contact-us", component: ContactUsComponent},
     {path: "/:pathMatch(.*)*", component: NotFoundView},
     { path: "/service-info", component: ServiceInfoView },
-    
+    { path: "/favorite-service", component: FavoriteServiceView },
 
 ];
 
