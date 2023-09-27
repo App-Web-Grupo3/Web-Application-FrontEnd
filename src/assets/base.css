@@ -2,8 +2,12 @@
 :root {
   /* Colores */
   --negro: #393939;
+  --font-color-bg-light: black;
+  --font-color-bg-dark: white;
   --primary-color: rgba(19, 94, 136, 0.7);
   --secondary-color: rgba(19, 94, 136, 0.3);
+  --bg-body-color: #EDEDED;
+  --bg-div-color: white;
   /* Tipografía */
   --tipo-principal: Helvetica, Arial, sans-serif;
   --tipo-secundaria: Verdana;
@@ -65,7 +69,7 @@ li {
 }
 
 /* Desactivamos estilos por defecto de las principales etiquetas de texto */
-h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, u, em {
   font-size: inherit;
   font-weight: inherit;
   font-style: inherit;
@@ -92,7 +96,6 @@ form, input, textarea, select, button, label {
   display: block;
   /* (Opcional) */
   appearance: none;
-  border: 0 !important;
 }
 
 /* Reseteamos las tablas */
@@ -122,6 +125,7 @@ body {
   font-size: 100%;
   font-family: var(--tipo-principal);
   color: var(--negro);
+  background-color: var(--bg-body-color);
 }
 
 section {
