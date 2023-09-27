@@ -12,6 +12,7 @@ const items = ref([
 
 const toggle = (event) => {
   menu.value.toggle(event);
+  console.log('toggle');
 };
 
 const value1 = ref(null);
@@ -19,13 +20,13 @@ const value1 = ref(null);
 
 <template>
   <div class="navbar">
-    <pv-toolbar class="navbar-container">
+    <pv-toolbar class="navbar-container container">
       <template #start>
         <div class="btn-menu">
           <pv-avatar icon="pi pi-user" class="mr-2" size="large" shape="circle"/>
           <pv-button type="button" icon="pi pi-bars" @click="toggle" aria-haspopup="true"
                      aria-controls="overlay_menu" class="btn" text rounded/>
-          <pv-menu ref="menu" id="overlay_menu" :model="items" :popup="true" />
+          <pv-menu class="menu" ref="menu" id="overlay_menu" :model="items" :popup="true" />
         </div>
         <div class="btn-chips flex gap-4">
           <pv-button id="my-purchases" class="btn" label="Mis compras" icon="pi pi-shopping-bag" text raised rounded/>
@@ -50,17 +51,16 @@ const value1 = ref(null);
   .navbar-container {
     background-color: transparent;
     border: 0;
-    max-width: 1500px;
-    margin: 0 auto;
+    padding: 1rem 2rem;
   }
 }
 .btn-menu {
   background-color: #fff;
   border-radius: 100px;
-  padding: 0;
   .btn {
     color: #000;
   }
+
 }
 .btn-chips {
   padding-left: 2rem;

@@ -46,7 +46,7 @@
                             <label for="descriptionService">Agregue una descripción</label>
                         </div>
                         <div class="p-float-label margin">
-                            <pv-inputnumber inputId="decPersona" :minFractionDigits="2" :maxFractionDigits="5" v-model="precio" />
+                            <pv-inputNumber inputId="decPersona" :minFractionDigits="2" :maxFractionDigits="5" v-model="precio" />
                             <label> Precio por persona </label>
                         </div>
 
@@ -65,7 +65,7 @@
                                 <p>¿Descuento general?</p>
                                 <div class="card flex-wrap gap-3 p-fluid">
                                     <div class="p-float-label">
-                                        <pv-inputnumber inputId="decPersona" :min="0.1" :max="99" :minFractionDigits="2" :maxFractionDigits="5" v-model="discountValue" />
+                                        <pv-inputNumber inputId="decPersona" :min="0.1" :max="99" :minFractionDigits="2" :maxFractionDigits="5" v-model="discountValue" />
                                         <label>Ingrese el descuento</label>
                                     </div>
                                 </div>
@@ -79,11 +79,11 @@
                             </div>
                             <div class="impPor margin jus-center">
                                 <div class="p-float-label">
-                                    <pv-inputnumber v-model="number" inputId="cantPerson" :useGrouping="false" />
+                                    <pv-inputNumber v-model="number" inputId="cantPerson" :useGrouping="false" />
                                     <label for="cantPerson" class="font-bold block mb-2">Cantidad de personas</label>
                                 </div>
                                 <div class="p-float-label">
-                                    <pv-inputnumber v-model="discountPer" inputId="decCantPersona" :min="0.1" :max="99" :minFractionDigits="2" :maxFractionDigits="5" />
+                                    <pv-inputNumber v-model="discountPer" inputId="decCantPersona" :min="0.1" :max="99" :minFractionDigits="2" :maxFractionDigits="5" />
                                     <label for="locale-german" class="font-bold block mb-2">Descuento</label>
                                 </div>
                             </div>
