@@ -2,10 +2,12 @@
 import NavbarComponent from '../components/navbar.component.vue';
 import TouristProfileComponent from "@/components/tourist-profile.component.vue";
 import FooterComponent from "@/components/footer-component.vue";
-
-import FavoritesComponent from "@/components/services-favorites.component.vue";
+import GalleriaComponent from "@/components/services-galleria.component.vue";
+import DataFavoritesComponent from "@/components/services-data-favorites.component.vue";
 import ServiceDataComponent from "@/components/service-data.component.vue";
 import {ref} from "vue";
+
+
 
 const services = ref([
   {
@@ -15,9 +17,8 @@ const services = ref([
         "ven a Huandoy y realiza este divertido y extremos deporte, tambien lo pueden" +
         "realizar los principiantes ya que contamos con todos los medios de seguridad" +
         "para evitar accidentes.",
-    email: "travelnew@gmail.com",
-    phone: "+51 952364789",
-    country: "Peru",
+    by: "agencia TravelNew",
+    cost: "$500.00",
     images: ["imagen1.jpg", "imagen2.jpg"],
   }
 ]);
@@ -38,8 +39,8 @@ const services = ref([
         <div class="info layout" v-for="(service, index) in services" :key="index">
           <h1 class="title">{{ $t('favorites') }}</h1>
           <div class="content flex gap-5 justify-content-between align-items-center">
-            <favorites-component></favorites-component>
-            <service-data-component :service="service"></service-data-component>
+            <galleria-component></galleria-component>
+            <data-favorites-component :service="service"></data-favorites-component>
           </div>
         </div>
       </div>

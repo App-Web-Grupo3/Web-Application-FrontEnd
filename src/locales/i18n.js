@@ -22,6 +22,8 @@ const i18n = createI18n({
             discount: 'Descuento: ',
             total: 'Total: ',
             favorites: 'Favoritos',
+            by: 'Por:',
+            cost: 'Costo:',
         },
         en: {
             home: 'Home',
@@ -41,6 +43,8 @@ const i18n = createI18n({
             discount: 'Discount: ',
             total: 'Total: ',
             favorites: 'Favorites',
+            by: 'By:',
+            cost: 'Cost:',
         }
     }
 })
