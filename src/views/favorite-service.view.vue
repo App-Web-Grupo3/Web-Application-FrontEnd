@@ -2,8 +2,8 @@
 import NavbarComponent from '../components/navbar.component.vue';
 import TouristProfileComponent from "@/components/tourist-profile.component.vue";
 import FooterComponent from "@/components/footer-component.vue";
-import CommentComponent from "@/components/comment-servicio.component.vue";
-import GalleriaComponent from "@/components/services-galleria.component.vue";
+
+import FavoritesComponent from "@/components/services-favorites.component.vue";
 import ServiceDataComponent from "@/components/service-data.component.vue";
 import {ref} from "vue";
 
@@ -38,7 +38,7 @@ const services = ref([
         <div class="info layout" v-for="(service, index) in services" :key="index">
           <h1 class="title">{{ $t('favorites') }}</h1>
           <div class="content flex gap-5 justify-content-between align-items-center">
-            <galleria-component></galleria-component>
+            <favorites-component></favorites-component>
             <service-data-component :service="service"></service-data-component>
           </div>
         </div>

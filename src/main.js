@@ -33,6 +33,7 @@ import FileUpload from 'primevue/fileupload';
 import ScrollPanel from 'primevue/scrollpanel';
 import SelectButton from 'primevue/selectbutton';
 import InputNumber from 'primevue/inputnumber';
+import Image from 'primevue/image';
 
 
 
@@ -63,4 +64,5 @@ app.component('pv-scrollpanel', ScrollPanel);
 app.component('pv-selectbutton', SelectButton);
 app.component('pv-galleria', Galleria);
 app.component('pv-inputNumber', inputNumber);
+app.component('pv-image', Image);
 app.mount('#app');
