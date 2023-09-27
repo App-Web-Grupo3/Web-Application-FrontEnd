@@ -51,6 +51,11 @@ const visible = ref(false);
             <pv-inputText class= "pay" v-model="value4" placeholder="Nombre del titular de la cuenta" />
             </span>
       </div>
+
+      <div class="card flex justify-content-center">
+        <pv-inputMask id="basic" v-model="value" placeholder="99/99/9999" slotChar="mm/dd/yyyy" />
+      </div>
+
       <successful-payment-component></successful-payment-component>
     </pv-dialog>
   </div>
