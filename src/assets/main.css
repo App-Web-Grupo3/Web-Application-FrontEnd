@@ -6,6 +6,7 @@
     margin: 0 auto;
     padding: 0 2em;
 }
+
 .layout {
     border-radius: 20px;
     background-color: white;
@@ -13,11 +14,25 @@
     height: min-content;
     padding: 2rem;
 }
+
 .title {
     font-size: 1.6em;
     font-weight: bold;
     margin-bottom: 1rem;
 }
+
+.view {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #EDEDED;
+    margin: 0;
+    padding-bottom: 5%;
+
+    .container {
+        padding-top: 5%;
+    }
+}
+
 @media (max-width: 1000px) and (min-width: 0px) {
     .container {
         font-size: 80%;
@@ -25,6 +40,7 @@
         align-items: center;
     }
 }
+
 @media (max-width: 500px) and (min-width: 0px) {
     .container {
         font-size: 60%;

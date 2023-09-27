@@ -3,9 +3,9 @@ import {ref} from "vue";
 
 const menu = ref();
 const items = ref([
-  {label: 'Home', icon: 'pi pi-home', to: '/home'},
-  {label: 'Profile', icon: 'pi pi-user', to: '/profile'},
-  {label: 'Settings', icon: 'pi pi-cog', to: '/settings'},
+  {label: 'Home', icon: 'pi pi-home', to: '/enterprise/home'},
+  {label: 'Profile', icon: 'pi pi-user', to: '/enterprise/profile'},
+  {label: 'Settings', icon: 'pi pi-cog', to: '/enterprise/settings'},
   {separator: true},
   {label: 'Sign Out', icon: 'pi pi-sign-out', to: '/'}
 ]);
@@ -16,7 +16,7 @@ const toggle = (event) => {
 };
 
 
-const value1 = ref();
+const valueSearch = ref();
 </script>
 
 <template>
@@ -29,15 +29,11 @@ const value1 = ref();
                      rounded text type="button" @click="toggle"/>
           <pv-menu id="overlay_menu" ref="menu" :model="items" :popup="true" class="menu"/>
         </div>
-        <div class="btn-chips flex gap-4">
-          <pv-button id="my-purchases" class="btn" icon="pi pi-shopping-bag" label="Mis compras" raised rounded text/>
-          <pv-button id="favorites" class="btn" icon="pi pi-bookmark-fill" label="Favoritos" raised rounded text/>
-        </div>
       </template>
       <template #end>
       <span class="p-input-icon-left">
           <i class="pi pi-search"/>
-          <pv-inputText v-model="value1" class="input-search" placeholder="Search"/>
+          <pv-inputText v-model="valueSearch" class="input-search" placeholder="Search"/>
       </span>
       </template>
     </pv-toolbar>
@@ -65,16 +61,6 @@ const value1 = ref();
     color: #000;
   }
 
-}
-
-.btn-chips {
-  padding-left: 2rem;
-
-  .btn {
-    background-color: #fff;
-    padding: .2rem 1.5rem;
-    color: #082944;
-  }
 }
 
 .input-search {
