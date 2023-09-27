@@ -21,6 +21,7 @@ const i18n = createI18n({
             amount: 'Monto por X personas: ',
             discount: 'Descuento: ',
             total: 'Total: ',
+            favorites: 'Favoritos',
         },
         en: {
             home: 'Home',
@@ -39,6 +40,7 @@ const i18n = createI18n({
             amount: 'Amount for X people: ',
             discount: 'Discount: ',
             total: 'Total: ',
+            favorites: 'Favorites',
         }
     }
 })
