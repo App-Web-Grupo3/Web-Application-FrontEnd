@@ -78,9 +78,7 @@ const accept = ref(false);
   min-width: 200px;
   margin: 0 auto;
 }
-.p-divider .p-divider-content {
-  background-color: #EDEDED !important;
-}
+
 .divider2__content{
   margin: 40px;
   font-weight: normal;

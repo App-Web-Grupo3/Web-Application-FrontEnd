@@ -142,7 +142,7 @@ const selectOption = (option) => {
 }
 
 .divider-overlay__content {
-  background-color: #fff;
+  background-color: var(--bg-body-color);
   padding: 20px;
 }
 
