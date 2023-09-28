@@ -1,11 +1,11 @@
 <script>
 export default {
-  name: "LoginComponent"
+  name: "recovery-password.component"
 }
 </script>
 
 <template>
-
+  
 </template>
 
 <style scoped>
