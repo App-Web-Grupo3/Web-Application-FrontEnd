@@ -155,7 +155,7 @@ export default {
           </div>
         </pv-scrollpanel>
         <div class="btn">
-          <router-link to="/add-services">
+          <router-link to="en-home/add-service">
             <pv-button label="Añadir ahora" plain rounded/>
           </router-link>
         </div>

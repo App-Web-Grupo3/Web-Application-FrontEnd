@@ -19,11 +19,11 @@ const routes = [
     {path: "/register", component: RegisterComponent},
     {path: "/my-profile", component: MyProfileComponent},
     {path: "/contact-us", component: ContactUsComponent},
-    {path: "/service-info", component: ServiceInfoView},
-    {path: "/favorite-service", component: FavoriteServiceView},
-    {path: "/enterprise/home", component: HomeEnterpriseView},
-    {path: "/add-service", component: AddServiceView},
-    {path: "/services-offers", component: ServiceOfferView},
+    {path: "/home", component: ServiceOfferView},
+    {path: "/home/service-info", component: ServiceInfoView},
+    {path: "/home/favorite-service", component: FavoriteServiceView},
+    {path: "/en-home", component: HomeEnterpriseView},
+    {path: "/en-home/add-service", component: AddServiceView},
     {path: "/:pathMatch(.*)*", component: NotFoundView},
 ];
 
