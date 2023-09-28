@@ -1,5 +1,4 @@
 //theme
-//import './assets/reset.css'
 import "primevue/resources/themes/viva-light/theme.css";
 import 'primevue/resources/primevue.min.css';
 import '/node_modules/primeflex/primeflex.css'
@@ -27,6 +26,19 @@ import Avatar from "primevue/avatar";
 import Card from "primevue/card";
 import Galleria from "primevue/galleria";
 import inputNumber from "primevue/inputnumber";
+import Textarea from 'primevue/textarea';
+import FileUpload from 'primevue/fileupload';
+import ScrollPanel from 'primevue/scrollpanel';
+import SelectButton from 'primevue/selectbutton';
+import InputNumber from 'primevue/inputnumber';
+import Image from 'primevue/image';
+import InputMask from 'primevue/inputmask';
+import FocusTrap from 'primevue/focustrap';
+import Password from 'primevue/password';
+import Divider from 'primevue/divider';
+import Checkbox from 'primevue/checkbox';
+import RadioButton from 'primevue/radiobutton';
+
 
 const app = createApp(App);
 
@@ -47,6 +59,18 @@ app.component('pv-speedDial', SpeedDial);
 app.component('pv-menu', Menu);
 app.component('pv-avatar', Avatar);
 app.component('pv-card', Card);
+app.component('pv-textarea', Textarea);
+app.component('pv-fileupload', FileUpload);
+app.component('pv-scrollpanel', ScrollPanel);
+app.component('pv-inputnumber', InputNumber);
+app.component('pv-selectbutton', SelectButton);
 app.component('pv-galleria', Galleria);
 app.component('pv-inputNumber', inputNumber);
+app.component('pv-image', Image);
+app.component('pv-inputMask', InputMask);
+app.component('pv-password', Password);
+app.component('pv-divider', Divider);
+app.component('pv-checkBox', Checkbox);
+app.component('pv-radioButton', RadioButton);
+app.directive('focustrap', FocusTrap);
 app.mount('#app');
