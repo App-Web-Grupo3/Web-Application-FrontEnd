@@ -6,6 +6,7 @@ import ContactUsComponent from "@/components/contact-us.component.vue";
 import LandingView from "@/views/landing.view.vue";
 import NotFoundView from "@/views/not-found.view.vue";
 import ServiceInfoView from "@/views/service-info.view.vue";
+import ServiceOfferView from "@/views/services-offers.view.vue";
 import HomeEnterpriseView from "@/views/home-enterprise.view.vue";
 import AddServiceView from "@/views/add-service.view.vue";
 import RegisterComponent from "@/components/register.component.vue";
@@ -22,6 +23,7 @@ const routes = [
     {path: "/favorite-service", component: FavoriteServiceView},
     {path: "/enterprise/home", component: HomeEnterpriseView},
     {path: "/add-service", component: AddServiceView},
+    {path: "/services-offers", component: ServiceOfferView},
     {path: "/:pathMatch(.*)*", component: NotFoundView},
 ];
 
