@@ -10,9 +10,12 @@ import FooterComponent from "@/components/footer.component.vue";
   <header>
     <header-component></header-component>
   </header>
-  <home-welcome-component></home-welcome-component>
-  <destinations-component></destinations-component>
-  <footer-component></footer-component>
+  <main>
+    <home-welcome-component></home-welcome-component>
+    <destinations-component></destinations-component>
+    <footer-component></footer-component>
+  </main>
+
 </template>
 
 <style scoped>

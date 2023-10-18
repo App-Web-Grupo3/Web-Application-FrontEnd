@@ -1,9 +1,47 @@
-<script setup>
-import { ref } from 'vue';
+<script>
+import { UserApiService } from "@/services/user-api.service";
+import FooterComponent from "@/components/footer.component.vue";
 
-const mail = ref('');
-const password = ref('');
-const accept = ref(false);
+export default {
+  name: "LoginComponent",
+  components: {FooterComponent},
+  data() {
+    return {
+      email: "",
+      password: "",
+      accept: false,
+      userApi: new UserApiService()
+    };
+  },
+  methods: {
+    login() {
+      const body = {
+        email: this.email,
+        password: this.password,
+        accept: this.accept
+      };
+
+      this.userApi.login(body).then((response) => {
+        if (response.data.accessToken){
+          if(response.data.user.selectedOption === 'Empresa'){
+            this.$router.push("/enterprise/home");
+            console.log('Esta es una empresa')
+          }else {
+            this.$router.push("/services-offers");
+            console.log('Este es un turista')
+          }
+          localStorage.setItem('user', JSON.stringify(response.data.user));
+          /*const type = localStorage.getItem("selectedOption");
+          sessionStorage.setItem("accessToken", response.data.accessToken);
+          this.$router.push("/enterprise/home");*/
+        } else alert("Error en usuario y/o password");
+      })
+          .catch((error) => {
+            alert("Error en usuario y/o password");
+          });
+    },
+  },
+};
 </script>
 
 <template>
@@ -16,29 +54,12 @@ const accept = ref(false);
   <div class="flex justify-content-center p-fluid">
     <div v-focustrap class="card form-container">
       <div class="form-container__field">
-        <pv-inputText id="mail" v-model="mail" type="text" placeholder="Correo electrónico" autofocus />
+        <pv-inputText id="email" v-model="email" type="text" placeholder="Correo electrónico" autofocus />
       </div>
       <div class="form-container__field">
-        <div class="p-float-label">
-          <pv-password v-model="password">
-            <template #header>
-              <h6>Pick a password</h6>
-            </template>
-            <template #footer>
-              <pv-divider />
-              <p class="mt-2">Suggestions</p>
-              <ul class="pl-2 ml-2 mt-0" style="line-height: 1.5">
-                <li>At least one lowercase</li>
-                <li>At least one uppercase</li>
-                <li>At least one numeric</li>
-                <li>Minimum 8 characters</li>
-              </ul>
-            </template>
-          </pv-password>
-          <label for="password">Contraseña</label>
-        </div>
+        <pv-inputText id="password" v-model="password" type="password" placeholder="Contraseña"/>
       </div>
-      <pv-button type="submit" label="INICIAR SESIÓN" class="form-container__button mt-2 mb-5" />
+      <pv-button @click="login()" type="submit" label="INICIAR SESIÓN" class="form-container__button mt-2 mb-5" />
       <div class="field-checkbox">
         <pv-checkBox id="accept" v-model="accept" name="accept" value="Accept" />
         <label for="accept" class="field-checkbox__label-1">No cerrar sesión</label>
@@ -47,6 +68,7 @@ const accept = ref(false);
       </div>
     </div>
   </div>
+<footer-component></footer-component>
 </template>
 
 <style scoped>

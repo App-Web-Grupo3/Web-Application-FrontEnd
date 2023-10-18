@@ -1,16 +1,43 @@
-<script setup>
-import { ref } from 'vue';
+<script>
+import { UserApiService } from "@/services/user-api.service";
 
-const name = ref('');
-const lastName = ref('');
-const phone = ref('');
-const mail= ref('');
-const password = ref('');
+export default {
+  name: "RegisterComponent",
+  data() {
+    return {
+      name: "",
+      lastname: "",
+      phone: "",
+      email: "",
+      password: "",
+      selectedOption: "",
+      userApi: new UserApiService()
+    };
+  },
+  methods: {
+    create() {
+      const body = {
+        name: this.name,
+        lastname: this.lastname,
+        phone: this.phone,
+        email: this.email,
+        password: this.password,
+        selectedOption: this.selectedOption
+      };
 
-const selectedOption = ref('');
-
-const selectOption = (option) => {
-  selectedOption.value = option;
+      this.userApi.register(body).then((response) => {
+        localStorage.setItem("selectedOption", this.selectedOption);
+        if (response.status === 201) {
+          alert("User Created");
+        } else {
+          alert("User not created, contact administrator");
+        }
+      });
+    },
+    selectOption(option) {
+      this.selectedOption = option;
+    },
+  },
 };
 </script>
 
@@ -24,7 +51,7 @@ const selectOption = (option) => {
     <div class="radio-row">
       <div class="radio-row__left">
         <div class="radio-row__container flex align-items-center">
-          <pv-radioButton id="radioButton1" name="radioGroup" value="option1" label="Opción 1" v-model="selectedOption" @click="selectOption('option1')"/>
+          <pv-radioButton id="radioButton1" name="radioGroup" value="Turista" label="Turista" v-model="selectedOption" @click="selectOption('Turista')"/>
           <label class="ml-2">Turista</label>
         </div>
       </div>
@@ -35,7 +62,7 @@ const selectOption = (option) => {
     <div class="radio-row">
       <div class="radio-row__right">
         <div class="radio-row__container flex align-items-center">
-          <pv-radioButton id="radioButton2" name="radioGroup" value="option2" label="Opción 2" v-model="selectedOption" @click="selectOption('option2')"/>
+          <pv-radioButton id="radioButton2" name="radioGroup" value="Empresa" label="Empresa" v-model="selectedOption" @click="selectOption('Empresa')"/>
           <label class="ml-2">Empresa</label>
         </div>
       </div>
@@ -46,18 +73,18 @@ const selectOption = (option) => {
       <div class="form-container__field">
         <div class="form-container__name-field">
           <pv-inputText id="name" v-model="name" type="text" placeholder="Nombre" autofocus />
-          <pv-inputText id="lastName" v-model="lastName" type="text" placeholder="Apellido"  />
+          <pv-inputText id="lastName" v-model="lastname" type="text" placeholder="Apellido"  />
         </div>
       </div>
       <div class="form-container__field">
-        <pv-inputText id="phone" v-model="phone" type="text" placeholder="Teléfono" autofocus />
+        <pv-inputText id="phone" v-model="phone" type="text" placeholder="Teléfono"/>
       </div>
       <div class="form-container__field">
-        <pv-inputText id="mail" v-model="mail" type="text" placeholder="Correo electrónico" autofocus />
+        <pv-inputText id="mail" v-model="email" type="text" placeholder="Correo electrónico"/>
       </div>
       <div class="form-container__field">
         <div class="p-float-label">
-          <pv-password v-model="password">
+          <pv-password v-model="password" type="password">
             <template #header>
               <h6>Pick a password</h6>
             </template>
@@ -75,7 +102,7 @@ const selectOption = (option) => {
           <label for="password">Contraseña</label>
         </div>
       </div>
-      <pv-button type="submit" label="REGISTRARME" class="form-container__button mt-4 mb-5 " />
+      <pv-button @click="create()" type="submit" label="REGISTRARME" class="form-container__button mt-4 mb-5" />
       <div class="field-footer">
         <label class="field-footer__label-1">No te enviaremos spam. Valoramos tu privacidad</label>
         <router-link to="/login" class="field-footer__label-2">¿Ya tienes una cuenta? Iniciar Sesión</router-link>

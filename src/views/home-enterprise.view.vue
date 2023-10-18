@@ -9,6 +9,9 @@ export default {
   ,
   data() {
     return {
+      user: {
+
+      },
       empresa: {
         nombre: '',
         correo: '',
@@ -25,13 +28,17 @@ export default {
   },
   methods: {
     submitForm() {
-      // Aquí puedes enviar los datos del formulario a tu servidor o realizar otras acciones.
       console.log(this.empresa);
     },
     handleImageUpload(event) {
       const file = event.target.files[0];
       this.empresa.imagen = file;
     }
+  },
+  beforeMount() {
+    //this.user = localStorage.getItem(JSON.parse'user');
+    let o = localStorage.getItem('user');
+    this.user = JSON.parse(o);
   }
 }
 </script>
@@ -50,8 +57,7 @@ export default {
               <div class="contenido-empresa font-size">
                 <p class="sub">TravelNew</p>
                 <p class="negrita">travelnew@gmailcom</p>
-                <p class="curvo">Somos una empresa de transporte publico que realiza viajes dentro del país sin
-                  descuidar la seguridad y comodidad al cliente.</p>
+                <p class="curvo">{{user}}</p>
 
                 <p class="negrita">Ubicación</p>
                 <p> Maecenas ultricies, InNulla.</p>

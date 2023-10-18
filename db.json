@@ -1,0 +1,171 @@
+{
+  "users": [
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$uOm.Mc1bjjVrWFZW10EoVuShUzzSJHv52z.3bchxira7ACMFP2AGS",
+      "name": "Mario",
+      "lastname": "HUancaina",
+      "phone": "987234123",
+      "id": 1
+    },
+    {
+      "email": "oliviere@mail.com",
+      "password": "$2a$10$OyJwNRDFCkREGZv33i8MhOl1QTECJajiitNups9sNeNe4CBzmGiQe",
+      "name": "Mario",
+      "lastname": "HUancaina",
+      "phone": "987234123",
+      "id": 2
+    },
+    {
+      "email": "oliviere@gmail.com",
+      "password": "$2a$10$tQbRbgP5/XiKB/eu/THcNuEJ.vCd7PNWD4grXMXUNnhKyiJWwYV9.",
+      "name": "Mario2",
+      "lastname": "HUancaina2",
+      "phone": "987234123",
+      "id": 3
+    },
+    {
+      "email": "u202120471@upc.edu.pe",
+      "password": "$2a$10$HjMZCv32uTnUBTaoDa8I0.1Y/eYBzkHndj9cUwnrfs6/TnKTIFy1W",
+      "name": "Jorge",
+      "lastname": "Ponce",
+      "phone": "981026079",
+      "id": 4
+    },
+    {
+      "email": "countrygg@gmail.com",
+      "password": "$2a$10$DOzITk2OGPtJbXBVYOFPje3zgF0DkE57Ir91NoJ2YjqrDePlgcK46",
+      "name": "Ricardo",
+      "lastname": "Maguiña",
+      "phone": "982012121",
+      "selectedOption": "Turista",
+      "id": 5
+    },
+    {
+      "email": "marialarompecuete@gmail.com",
+      "password": "$2a$10$hTfAawkXdhuZFTL6npOIVupc4qkfdSmYkQY5zy6lYroxmDBV3JWa6",
+      "name": "Maria",
+      "lastname": "Cuete",
+      "phone": "976234512",
+      "selectedOption": "Empresa",
+      "id": 6
+    },
+    {
+      "email": "pepelucho123@gmail.com",
+      "password": "$2a$10$XTEOP2QHv6H0iWtbsVnotuIT/ovkOzkHrmBuXmFwmrvzzrfB.osdK",
+      "name": "Pepe",
+      "lastname": "Lucho",
+      "phone": "956742123",
+      "selectedOption": "Turista",
+      "id": 7
+    },
+    {
+      "email": "tulaza@gmail.com",
+      "password": "$2a$10$VCDwtUI/CihBsDIngnWR8.mUmIOcEzLmcRSk8T4H8zR5.Q2ZZ/Ncy",
+      "name": "Tula",
+      "lastname": "Rodriguez",
+      "phone": "123456789",
+      "selectedOption": "Empresa",
+      "id": 8
+    },
+    {
+      "email": "colitas123@gmail.com",
+      "password": "$2a$10$7XhHhPA9AlPtRtaEkdqWV.QWwC2ZefK/KTvISaBwMENNM9/Kn1t0W",
+      "name": "colitas",
+      "lastname": "urrutia",
+      "phone": "976436587",
+      "selectedOption": "Turista",
+      "id": 9
+    },
+    {
+      "email": "mario123@gmail.com",
+      "password": "$2a$10$yLvKa3lAFnA8rkIBtLeFTOCxH.mm7jpMVt/Kg0swGWhgNwwvzRiQi",
+      "name": "aww",
+      "lastname": "wewas",
+      "phone": "121323244",
+      "selectedOption": "",
+      "id": 10
+    },
+    {
+      "email": "lucas123@gmail.com",
+      "password": "$2a$10$y7Gef28vfoF/xFsAjvWSf.szDSGzfcmI7gtjpRDg8iv1wV8Z9TFIS",
+      "name": "Lucas",
+      "lastname": "Moran",
+      "phone": "982301242",
+      "selectedOption": "Empresa",
+      "id": 11
+    },
+    {
+      "email": "ter123@gmai.com",
+      "password": "$2a$10$fCIP7qJ18XPJr6dIwT4A.eW6d1DjL6EpQRtPFLO72HBnwvTMEjqk2",
+      "name": "aweaw",
+      "lastname": "wea",
+      "phone": "1213232321",
+      "selectedOption": "",
+      "id": 12
+    },
+    {
+      "email": "awa123@gmail.com",
+      "password": "$2a$10$6utFJxC1Cy/6FodCDf1S4O.IkF2oJ4goWeYlDsG12nbsqj4wbnx.i",
+      "name": "eweaw",
+      "lastname": "weasawe",
+      "phone": "ewaewea",
+      "selectedOption": "Turista",
+      "id": 13
+    },
+    {
+      "email": "amar123@gmail.com",
+      "password": "$2a$10$QA6.a0rv7XrE96xt7NXWCugTnTUn2DcqsOr8VcVQseeNyWXTwHVea",
+      "name": "aewas",
+      "lastname": "sfsaea",
+      "phone": "ewaewea",
+      "selectedOption": "Empresa",
+      "id": 14
+    },
+    {
+      "email": "aeiou123@gmail.com",
+      "password": "$2a$10$/8/7V6GF0dBdiVC.khzlm.1oQN7iRXegL4hInU8S12Z1T7MWNCE1S",
+      "name": "aweaw",
+      "lastname": "aweas",
+      "phone": "1232323212",
+      "selectedOption": "Turista",
+      "id": 15
+    },
+    {
+      "email": "empresa123@gmail.com",
+      "password": "$2a$10$odBm0xz/1WN9V654bDHCMODlvnFbjfpqteZU9wvDwomNQrZfys4.C",
+      "name": "swaeaw",
+      "lastname": "saweaw",
+      "phone": "123232324",
+      "selectedOption": "Empresa",
+      "id": 16
+    },
+    {
+      "email": "gerson123@gmail.com",
+      "password": "$2a$10$/2kpn4UV2YgnUEE48Rwzl.3Cb741nCKiYo.AWjVPpUY9TQmlBqjjq",
+      "name": "Gerson",
+      "lastname": "Revatta",
+      "phone": "982123012",
+      "selectedOption": "Empresa",
+      "id": 17
+    },
+    {
+      "email": "mene123@gmail.com",
+      "password": "$2a$10$rW1nwDbCJ7/pGI1PH9B4DuQ1CSIt2WbP5YQ8616tmWDWWHd2KEhbW",
+      "name": "Ana",
+      "lastname": "Hinostroza",
+      "phone": "975353890",
+      "selectedOption": "Empresa",
+      "id": 18
+    },
+    {
+      "email": "dixijoge123@gmail.com",
+      "password": "$2a$10$.teHiVEG2R20k15QIIPqv.w3x9dP0KppkZtCSHxH5PO.uBuJ/f/8.",
+      "name": "Dixi",
+      "lastname": "Negro",
+      "phone": "9812132123",
+      "selectedOption": "",
+      "id": 19
+    }
+  ]
+}

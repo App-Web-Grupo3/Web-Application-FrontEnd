@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <pv-card class="tourist-profile" style="width: 20em">
+  <pv-card class="tourist-profile" id ="1" style="width: 20em">
     <template #header>
       <img alt="user" src="https://primefaces.org/cdn/primevue/images/usercard.png" class="user-img"/>
     </template>

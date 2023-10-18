@@ -1,28 +1,32 @@
 <script>
 export default {
   name: "HeaderComponent",
+  methods: {
+    scrollToSection(id) {
+      let section = document.getElementById(id);
+      if (section && section.id === id) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  },
   data() {
     return {
       menuItems: [
         {
           label: this.$t('home'),
           icon: 'pi pi-home',
-          to: '/'
+          command: () => this.scrollToSection('welcome')
         },
         {
           label: this.$t('destinations'),
           icon: 'pi pi-globe',
-          to: '/destinations'
+          to: '/destinations',
+          command: () => this.scrollToSection('destinations')
         },
         {
           label: this.$t('login'),
           icon: 'pi pi-user',
           to: '/login'
-        },
-        {
-          label: this.$t('myProfile'),
-          icon: 'pi pi-user-edit',
-          to: '/my-profile'
         },
         {
           label: this.$t('contactUs'),
