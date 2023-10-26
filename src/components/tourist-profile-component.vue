@@ -10,8 +10,8 @@
     <template #title> Maria Becerra </template>
     <template #content>
       <p>
-        Aventurera en busca de nuevas experiencias. Mi pasión es explorar lugares lejanos y cercanos,
-        sumergirme en culturas diversas y capturar recuerdos en cada rincón del planeta. #ViajeroIncansable #MundoPorDescubrir
+       Una vez me desperté, no estabas más a mi lado, pensé que suerte por fin esta historia se ha acabado, luego me desenvolví y no te dije ni sorry baby
+        y ahora estoy ganando más que tu con sola una history. #ViajeraIncansable #MundoPorDescubrir
       </p>
     </template>
     <template #footer>
