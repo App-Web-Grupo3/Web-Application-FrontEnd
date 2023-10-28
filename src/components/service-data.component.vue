@@ -4,7 +4,8 @@ import CalculateServiceComponent from "@/components/calculate-service.component.
 import { useToast } from 'primevue/usetoast';
 
 const props = defineProps({
-  service: Object
+  activity: Object,
+  enterprise: Object,
 });
 const toast = useToast();
 const successfulSaved = () => {
@@ -15,15 +16,14 @@ const successfulSaved = () => {
 
 <template>
   <pv-card class="info" style="width: 500px">
-    <template #title>{{ service.title }}</template>
+    <template #title>{{ activity.title }}</template>
     <template #subtitle> {{ $t('details') }} </template>
     <template #content>
-      <p>{{ service.description }}</p>
+      <p>{{ activity.description }}</p>
       <br>
       <ul>
-        <li><b>{{ $t('email') }}</b><p>{{ service.email }}</p></li>
-        <li><b>{{ $t('phone') }}</b><p>{{ service.phone }}</p></li>
-        <li><b>{{ $t('country') }}</b><p>{{ service.country }}</p></li>
+        <li><b>{{ $t('email') }}</b><p>{{ enterprise.email }}</p></li>
+        <li><b>{{ $t('phone') }}</b><p>{{ enterprise.phone }}</p></li>
       </ul>
     </template>
     <template #footer class="footer ">

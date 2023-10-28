@@ -71,6 +71,26 @@
     },
     {
       "id": 3,
+      "url": "imagen1.jpg",
+      "activity_id": 1
+    },
+    {
+      "id": 4,
+      "url": "imagen2.jpg",
+      "activity_id": 1
+    },
+    {
+      "id": 5,
+      "url": "imagen1.jpg",
+      "activity_id": 2
+    },
+    {
+      "id": 6,
+      "url": "imagen2.jpg",
+      "activity_id": 2
+    },
+    {
+      "id": 7,
       "url": "imagen3.jpg",
       "activity_id": 2
     }

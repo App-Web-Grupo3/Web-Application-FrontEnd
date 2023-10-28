@@ -20,7 +20,11 @@ const routes = [
     {path: "/login", component: LoginComponent},
     {path: "/register", component: RegisterComponent},
     {path: "/contact-us", component: ContactUsComponent},
-    {path: "/service-info", component: ServiceInfoView},
+    {
+        path: '/service-info/:activityId',
+        name: 'service-info',
+        component: ServiceInfoView
+    },
     {path: "/favorite-service", component: FavoriteServiceView},
     {path: "/enterprise/home", component: HomeEnterpriseView},
     {path: "/add-service", component: AddServiceView},
