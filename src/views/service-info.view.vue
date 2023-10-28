@@ -38,7 +38,7 @@ onMounted(() => {
       </div>
       <div class="end flex">
         <div class="info layout">
-          <h1 class="title">{{ $t('service') }}</h1>
+          <h1 class="title">{{ enterprise.name }}</h1>
           <div class="content flex gap-5 justify-content-between align-items-center">
             <galleria-component></galleria-component>
             <service-data-component
@@ -75,6 +75,7 @@ onMounted(() => {
 .end {
   flex-grow: 9999;
   flex-direction: column;
+  width: min-content;
   max-width: 70rem;
   gap: 2rem;
 }
@@ -100,6 +101,11 @@ onMounted(() => {
   }
   .content {
     flex-wrap: wrap;
+  }
+}
+@media (max-width: 768px) {
+  .end {
+    width: 100%;
   }
 }
 </style>
