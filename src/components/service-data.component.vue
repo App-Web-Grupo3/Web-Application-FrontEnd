@@ -3,7 +3,7 @@ import { ref, defineProps } from "vue";
 import CalculateServiceComponent from "@/components/calculate-service.component.vue";
 import { useToast } from 'primevue/usetoast';
 
-const props = defineProps({
+defineProps({
   activity: Object,
   enterprise: Object,
 });

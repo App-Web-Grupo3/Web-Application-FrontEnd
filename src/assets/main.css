@@ -5,6 +5,7 @@
     max-width: 1700px;
     margin: 0 auto;
     padding: 0 2em;
+    font-size: 1em;
 }
 
 .layout {
@@ -30,6 +31,16 @@
 
     .container {
         padding-top: 5%;
+    }
+}
+@media (max-width: 1600px) and (min-width: 0px) {
+    html {
+        font-size: 85%;
+    }
+}
+@media (max-width: 1300px) and (min-width: 0px) {
+    .container {
+        gap: 1rem !important;
     }
 }
 

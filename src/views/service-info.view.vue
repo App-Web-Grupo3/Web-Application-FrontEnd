@@ -32,11 +32,11 @@ onMounted(() => {
 <template>
   <div class="service-info">
     <navbar-component></navbar-component>
-    <div class="container flex gap-5">
-      <div class="start" style="flex-grow: 1">
+    <div class="container">
+      <div class="start">
         <tourist-profile-component></tourist-profile-component>
       </div>
-      <div class="end flex gap-5" style="flex-grow: 9999">
+      <div class="end flex">
         <div class="info layout">
           <h1 class="title">{{ $t('service') }}</h1>
           <div class="content flex gap-5 justify-content-between align-items-center">
@@ -66,15 +66,40 @@ onMounted(() => {
 
   .container {
     padding-top: 5%;
+    justify-content: center;
+    display: flex;
+    gap: 2rem;
   }
 }
 
 .end {
   flex-grow: 9999;
   flex-direction: column;
+  max-width: 70rem;
+  gap: 2rem;
 }
+
 
 .feedback {
   padding: 2em;
+}
+
+@media (max-width: 1300px) {
+  .end {
+    gap: 1rem;
+  }
+}
+@media (max-width: 1200px) {
+  .start {
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  .start {
+    display: none;
+  }
+  .content {
+    flex-wrap: wrap;
+  }
 }
 </style>
