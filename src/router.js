@@ -26,17 +26,18 @@ const routes = [
 
     {path: "/service-info", component: ServiceInfoView},
     {path: "/favorite-service", component: FavoriteServiceView},
-    {path: "/enterprise/home", component: HomeEnterpriseView},
-    {path: "/add-service", component: AddServiceView},
+
+
     {path: "/services-offers", component: ServiceOfferView},
     {path: "/services-data", component: ServiceDataComponent2},
     {path: "/home", component: ServiceOfferView},
     {path: "/home/service-info", component: ServiceInfoView},
     {path: "/home/favorite-service", component: FavoriteServiceView},
-    {path: "/home/company/hired-service", component: HiredServicesCompany},
     {path: "/home/tourist/hired-service", component: HiredServicesTourist},
     {path: "/en-home", component: HomeEnterpriseView},
     {path: "/en-home/add-service", component: AddServiceView},
+    {path: "/home/company/hired-service", component: HiredServicesCompany},
+
     {path: "/:pathMatch(.*)*", component: NotFoundView},
 ];
 

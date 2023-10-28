@@ -4,6 +4,7 @@ import NavbarComponent from '../components/navbar.component.vue';
 import TouristProfileComponent from "@/components/tourist-profile.component.vue";
 import FooterComponent from "@/components/footer.component.vue";
 import TableComponent from "@/components/table-company-hired-services.component.vue";
+import NavbarEnterpriseComponent from "@/components/navbar-enterprise.component.vue";
 
 const services = ref([
   { label: "Expedición para alpinistas en El Huascarán. Oferta limitada por temporada", showTable: false },
@@ -18,7 +19,7 @@ const toggleTable = (index) => {
 
 <template>
   <div class="service-info">
-    <navbar-component></navbar-component>
+      <navbar-enterprise-component></navbar-enterprise-component>
 
     <div class="container flex gap-8">
       <div class="start layout" style="flex-grow: 1">

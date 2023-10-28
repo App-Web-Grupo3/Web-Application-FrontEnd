@@ -28,8 +28,12 @@ const value1 = ref(null);
           <pv-menu ref="menu" id="overlay_menu" :model="items" :popup="true" />
         </div>
         <div class="btn-chips flex gap-4">
-          <pv-button id="my-purchases" class="btn" label="Mis compras" icon="pi pi-shopping-bag" text raised rounded/>
-          <pv-button id="favorites" class="btn" label="Favoritos" icon="pi pi-bookmark-fill" text raised rounded/>
+            <router-link to="/home/tourist/hired-service">
+                <pv-button id="my-purchases" class="btn" label="Mis compras" icon="pi pi-shopping-bag" text raised rounded/>
+            </router-link>
+          <router-link to="/home/favorite-service">
+              <pv-button id="favorites" class="btn" label="Favoritos" icon="pi pi-bookmark-fill" text raised rounded/>
+          </router-link>
         </div>
       </template>
       <template #end>

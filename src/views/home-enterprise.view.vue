@@ -153,7 +153,10 @@ export default {
                   temporada.</p>
               </template>
               <template #footer>
-                <pv-button icon="pi pi-check" label="Ver clientes" style="font-size: 12px; padding: 4px 8px;"/>
+                  <router-link to="/home/company/hired-service">
+                      <pv-button icon="pi pi-check" label="Ver clientes" style="font-size: 12px; padding: 4px 8px;"/>
+
+                  </router-link>
                 <pv-button icon="pi pi-times" label="Eliminar" severity="secondary"
                            style="font-size: 12px; padding: 4px 8px; margin-left: 0.5em;"/>
               </template>
@@ -161,7 +164,7 @@ export default {
           </div>
         </pv-scrollpanel>
         <div class="btn">
-          <router-link to="/add-services">
+          <router-link to="/en-home/add-service">
             <pv-button label="Añadir ahora" plain rounded/>
           </router-link>
         </div>
@@ -171,6 +174,12 @@ export default {
 </template>
 
 <style scoped>
+.img-logo{
+  width: 50%;
+}
+.contenido-empresa{
+  width: 50%;
+}
 
 .font-size {
   font-size: 12px;

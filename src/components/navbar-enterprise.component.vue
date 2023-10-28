@@ -3,7 +3,7 @@ import {ref} from "vue";
 
 const menu = ref();
 const items = ref([
-  {label: 'Home', icon: 'pi pi-home', to: '/enterprise/home'},
+  {label: 'Home', icon: 'pi pi-home', to: '/en-home'},
   {label: 'Profile', icon: 'pi pi-user', to: '/enterprise/profile'},
   {label: 'Settings', icon: 'pi pi-cog', to: '/enterprise/settings'},
   {separator: true},
