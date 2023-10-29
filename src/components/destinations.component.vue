@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-  <section class="destinations">
+  <section class="destinations" id="destinations">
     <h2 class="destinations__title">Destinos populares</h2>
     <div class="destinations__container">
       <div class="destination">

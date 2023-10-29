@@ -5,6 +5,7 @@
     max-width: 1700px;
     margin: 0 auto;
     padding: 0 2em;
+    font-size: 1em;
 }
 
 .layout {
@@ -32,6 +33,16 @@
         padding-top: 5%;
     }
 }
+@media (max-width: 1500px) and (min-width: 0px) {
+    html {
+        font-size: 85%;
+    }
+}
+@media (max-width: 1300px) and (min-width: 0px) {
+    .container {
+        gap: 1rem !important;
+    }
+}
 
 @media (max-width: 1000px) and (min-width: 0px) {
     .container {
@@ -47,12 +58,6 @@
     }
 }
 
-a,
-.green {
-    text-decoration: none;
-    color: hsla(160, 100%, 37%, 1);
-    transition: 0.4s;
-}
 
 
 

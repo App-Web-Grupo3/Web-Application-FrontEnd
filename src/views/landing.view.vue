@@ -1,8 +1,8 @@
 <script setup>
 import HeaderComponent from "@/components/header.component.vue";
-import HomeWelcomeComponent from "@/components/home-welcome-component.vue";
-import DestinationsComponent from "@/components/destinations-component.vue";
-import FooterComponent from "@/components/footer-component.vue";
+import HomeWelcomeComponent from "@/components/home-welcome.component.vue";
+import DestinationsComponent from "@/components/destinations.component.vue";
+import FooterComponent from "@/components/footer.component.vue";
 
 </script>
 
@@ -10,9 +10,12 @@ import FooterComponent from "@/components/footer-component.vue";
   <header>
     <header-component></header-component>
   </header>
-  <home-welcome-component></home-welcome-component>
-  <destinations-component></destinations-component>
-  <footer-component></footer-component>
+  <main>
+    <home-welcome-component></home-welcome-component>
+    <destinations-component></destinations-component>
+    <footer-component></footer-component>
+  </main>
+
 </template>
 
 <style scoped>

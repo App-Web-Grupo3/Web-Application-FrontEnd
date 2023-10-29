@@ -3,18 +3,16 @@
 </script>
 
 <template>
-  <pv-card class="tourist-profile" style="width: 18rem">
+  <pv-card class="tourist-profile" id ="1">
     <template #header>
       <img alt="user" src="https://primefaces.org/cdn/primevue/images/usercard.png" class="user-img"/>
     </template>
     <template #title> Maria Becerra </template>
     <template #content>
       <p>
-        Aventurera en busca de nuevas experiencias. Mi pasión es explorar lugares lejanos y cercanos,
-        sumergirme en culturas diversas y capturar recuerdos en cada rincón del planeta.
-      </p> <br>
-      <p>#ViajeroIncansable</p>
-      <p>#MundoPorDescubrir</p>
+       Una vez me desperté, no estabas más a mi lado, pensé que suerte por fin esta historia se ha acabado, luego me desenvolví y no te dije ni sorry baby
+        y ahora estoy ganando más que tu con sola una history. #ViajeraIncansable #MundoPorDescubrir
+      </p>
     </template>
     <template #footer>
       <pv-button icon="pi pi-user-edit" label="Editar informacion" rounded class="edit-btn"/>
@@ -25,20 +23,18 @@
 <style scoped>
 .tourist-profile {
   border-radius: 20px;
-  padding: 0;
-  box-shadow: none;
+  min-width: 15rem;
+  max-width: 20rem;
   .user-img {
-    width: 15rem;
-    height: 15rem;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    margin: 1rem auto;
+    clip-path: circle();
   }
   .edit-btn {
+    min-width: max-content;
     width: 100%;
     background-color: var(--primary-color);
   }
-}
-.p-0 {
-  padding: 0;
 }
 </style>

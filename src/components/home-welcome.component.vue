@@ -5,9 +5,9 @@ export default {
 </script>
 
 <template>
-  <section class="welcome">
+  <section class="welcome" id="welcome">
     <div class="welcome__container">
-      <h2 class="welcome__title">Bienvenido a Unique Trips</h2>
+      <h2 class="welcome__title">Bienvenido a UniqueTrips</h2>
       <p class="welcome__paragraph"> Explora destinos nuevos y emocionantes con nuestra agencia de viajes</p>
     </div>
   </section>
