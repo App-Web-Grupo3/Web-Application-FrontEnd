@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import DataFavoritesComponent from "@/components/services-data-favorites.component.vue";
 import GalleriaComponent from "@/components/services-galleria.component.vue";
-import SuccessfulPaymentComponent from "@/components/successful-payment.component.vue";
+import  SuccessfulPaymentComponent from "@/components/successful-payment.component.vue";
 
 const value = ref('');
 const value2 = ref(1);
