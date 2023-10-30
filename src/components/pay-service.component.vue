@@ -19,7 +19,7 @@ const visible = ref(false);
     <pv-button class="btn" label="Pagar Oferta"  @click="visible = true" />
 
 
-    <pv-dialog v-model:visible="visible" modal header="Pagar Servicio" :style="{ width: '80rem' }"
+    <pv-dialog v-model:visible="visible" modal header="Pagar Servicio" :style="{ width: '50rem' }"
                :breakpoints="{ '960px': '75vw', '641px': '100vw' }">
 
       <h1> Servicio Seleccionado </h1>
