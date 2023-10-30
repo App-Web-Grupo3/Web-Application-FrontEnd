@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <pv-card class="tourist-profile" id ="1" style="width: 20em">
+  <pv-card class="tourist-profile" id ="1">
     <template #header>
       <img alt="user" src="https://primefaces.org/cdn/primevue/images/usercard.png" class="user-img"/>
     </template>
@@ -23,6 +23,8 @@
 <style scoped>
 .tourist-profile {
   border-radius: 20px;
+  min-width: 15rem;
+  max-width: 20rem;
   .user-img {
     width: 100%;
     height: 100%;
@@ -30,6 +32,7 @@
     clip-path: circle();
   }
   .edit-btn {
+    min-width: max-content;
     width: 100%;
     background-color: var(--primary-color);
   }

@@ -6,9 +6,12 @@ const value2 = ref(1);
 </script>
 
 <template>
-  <div class="save">
-    <pv-button class="btn" label="Mas Detalles"  @click="visible = true" />
-  </div>
+    <router-link to="/service-info/:activityId">
+        <div class="save">
+            <pv-button class="btn" label="Mas Detalles"  @click="visible = true" />
+        </div>
+    </router-link>
+
 </template>
 
 <style scoped>

@@ -2,12 +2,14 @@
 import { ref } from 'vue';
 import DataFavoritesComponent from "@/components/services-data-favorites.component.vue";
 import GalleriaComponent from "@/components/services-galleria.component.vue";
-import SuccessfulPaymentComponent from "@/components/successful-payment.component.vue";
+import  SuccessfulPaymentComponent from "@/components/successful-payment.component.vue";
 
 const value = ref('');
 const value2 = ref(1);
 const value3 = ref(null);
 const value4 = ref(null);
+const value5 = ref(null);
+const value6 = ref(null);
 const visible = ref(false);
 </script>
 
@@ -39,6 +41,7 @@ const visible = ref(false);
           </div>
         </template>
       </pv-card>
+
       <br><h1> Métodos de Pago </h1><br>
       <div class="card flex flex-wrap justify-content-left gap-3">
         <span class="p-input-icon-left">
@@ -52,8 +55,16 @@ const visible = ref(false);
             </span>
       </div>
 
-      <div class="card flex justify-content-center">
-        <pv-inputMask id="basic" v-model="value" placeholder="99/99/9999" slotChar="mm/dd/yyyy" />
+      <div class="card flex flex-wrap justify-content-left gap-3">
+        <span class="p-input-icon-left">
+            <pv-inputText class= "pay" v-model="value5" placeholder="MM/AA" />
+            </span>
+      </div>
+
+      <div class="card flex flex-wrap justify-content-left gap-3">
+        <span class="p-input-icon-left">
+            <pv-inputText class= "pay" v-model="value6" placeholder="CVC/CVV" />
+            </span>
       </div>
 
       <successful-payment-component></successful-payment-component>
