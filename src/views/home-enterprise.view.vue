@@ -9,6 +9,9 @@ export default {
   ,
   data() {
     return {
+      user: {
+
+      },
       empresa: {
         nombre: '',
         correo: '',
@@ -25,13 +28,17 @@ export default {
   },
   methods: {
     submitForm() {
-      // Aquí puedes enviar los datos del formulario a tu servidor o realizar otras acciones.
       console.log(this.empresa);
     },
     handleImageUpload(event) {
       const file = event.target.files[0];
       this.empresa.imagen = file;
     }
+  },
+  beforeMount() {
+    //this.user = localStorage.getItem(JSON.parse'user');
+    let o = localStorage.getItem('user');
+    this.user = JSON.parse(o);
   }
 }
 </script>
@@ -50,8 +57,7 @@ export default {
               <div class="contenido-empresa font-size">
                 <p class="sub">TravelNew</p>
                 <p class="negrita">travelnew@gmailcom</p>
-                <p class="curvo">Somos una empresa de transporte publico que realiza viajes dentro del país sin
-                  descuidar la seguridad y comodidad al cliente.</p>
+                <p class="curvo">{{user}}</p>
 
                 <p class="negrita">Ubicación</p>
                 <p> Maecenas ultricies, InNulla.</p>
@@ -147,7 +153,10 @@ export default {
                   temporada.</p>
               </template>
               <template #footer>
-                <pv-button icon="pi pi-check" label="Ver clientes" style="font-size: 12px; padding: 4px 8px;"/>
+                  <router-link to="/home/company/hired-service">
+                      <pv-button icon="pi pi-check" label="Ver clientes" style="font-size: 12px; padding: 4px 8px;"/>
+
+                  </router-link>
                 <pv-button icon="pi pi-times" label="Eliminar" severity="secondary"
                            style="font-size: 12px; padding: 4px 8px; margin-left: 0.5em;"/>
               </template>
@@ -155,7 +164,9 @@ export default {
           </div>
         </pv-scrollpanel>
         <div class="btn">
-          <router-link to="en-home/add-service">
+
+          <router-link to="/en-home/add-service">
+
             <pv-button label="Añadir ahora" plain rounded/>
           </router-link>
         </div>
@@ -165,6 +176,12 @@ export default {
 </template>
 
 <style scoped>
+.img-logo{
+  width: 50%;
+}
+.contenido-empresa{
+  width: 50%;
+}
 
 .font-size {
   font-size: 12px;

@@ -38,6 +38,8 @@ import Password from 'primevue/password';
 import Divider from 'primevue/divider';
 import Checkbox from 'primevue/checkbox';
 import RadioButton from 'primevue/radiobutton';
+import DataTable from 'primevue/datatable';
+import Column from 'primevue/column';
 
 
 const app = createApp(App);
@@ -65,6 +67,8 @@ app.component('pv-scrollpanel', ScrollPanel);
 app.component('pv-inputnumber', InputNumber);
 app.component('pv-selectbutton', SelectButton);
 app.component('pv-galleria', Galleria);
+app.component('pv-datatable', DataTable);
+app.component('pv-column', Column);
 app.component('pv-inputNumber', inputNumber);
 app.component('pv-image', Image);
 app.component('pv-inputMask', InputMask);

@@ -4,9 +4,7 @@ import TouristProfileComponent from "@/components/tourist-profile.component.vue"
 import FooterComponent from "@/components/footer.component.vue";
 import GalleriaComponent from "@/components/services-galleria.component.vue";
 import DataFavoritesComponent from "@/components/services-data-favorites.component.vue";
-import ServiceDataComponent from "@/components/service-data.component.vue";
 import {ref} from "vue";
-
 
 
 const services = ref([

@@ -1,43 +1,16 @@
-<script>
-import { UserApiService } from "@/services/user-api.service";
+<script setup>
+import { ref } from 'vue';
 
-export default {
-  name: "RegisterComponent",
-  data() {
-    return {
-      name: "",
-      lastname: "",
-      phone: "",
-      email: "",
-      password: "",
-      selectedOption: "",
-      userApi: new UserApiService()
-    };
-  },
-  methods: {
-    create() {
-      const body = {
-        name: this.name,
-        lastname: this.lastname,
-        phone: this.phone,
-        email: this.email,
-        password: this.password,
-        selectedOption: this.selectedOption
-      };
+const name = ref('');
+const lastName = ref('');
+const phone = ref('');
+const mail= ref('');
+const password = ref('');
 
-      this.userApi.register(body).then((response) => {
-        localStorage.setItem("selectedOption", this.selectedOption);
-        if (response.status === 201) {
-          alert("User Created");
-        } else {
-          alert("User not created, contact administrator");
-        }
-      });
-    },
-    selectOption(option) {
-      this.selectedOption = option;
-    },
-  },
+const selectedOption = ref('');
+
+const selectOption = (option) => {
+  selectedOption.value = option;
 };
 </script>
 
@@ -51,7 +24,7 @@ export default {
     <div class="radio-row">
       <div class="radio-row__left">
         <div class="radio-row__container flex align-items-center">
-          <pv-radioButton id="radioButton1" name="radioGroup" value="Turista" label="Turista" v-model="selectedOption" @click="selectOption('Turista')"/>
+          <pv-radioButton id="radioButton1" name="radioGroup" value="option1" label="Opción 1" v-model="selectedOption" @click="selectOption('option1')"/>
           <label class="ml-2">Turista</label>
         </div>
       </div>
@@ -62,7 +35,7 @@ export default {
     <div class="radio-row">
       <div class="radio-row__right">
         <div class="radio-row__container flex align-items-center">
-          <pv-radioButton id="radioButton2" name="radioGroup" value="Empresa" label="Empresa" v-model="selectedOption" @click="selectOption('Empresa')"/>
+          <pv-radioButton id="radioButton2" name="radioGroup" value="option2" label="Opción 2" v-model="selectedOption" @click="selectOption('option2')"/>
           <label class="ml-2">Empresa</label>
         </div>
       </div>
@@ -73,18 +46,18 @@ export default {
       <div class="form-container__field">
         <div class="form-container__name-field">
           <pv-inputText id="name" v-model="name" type="text" placeholder="Nombre" autofocus />
-          <pv-inputText id="lastName" v-model="lastname" type="text" placeholder="Apellido"  />
+          <pv-inputText id="lastName" v-model="lastName" type="text" placeholder="Apellido"  />
         </div>
       </div>
       <div class="form-container__field">
-        <pv-inputText id="phone" v-model="phone" type="text" placeholder="Teléfono"/>
+        <pv-inputText id="phone" v-model="phone" type="text" placeholder="Teléfono" autofocus />
       </div>
       <div class="form-container__field">
-        <pv-inputText id="mail" v-model="email" type="text" placeholder="Correo electrónico"/>
+        <pv-inputText id="mail" v-model="mail" type="text" placeholder="Correo electrónico" autofocus />
       </div>
       <div class="form-container__field">
         <div class="p-float-label">
-          <pv-password v-model="password" type="password">
+          <pv-password v-model="password">
             <template #header>
               <h6>Pick a password</h6>
             </template>
@@ -102,7 +75,7 @@ export default {
           <label for="password">Contraseña</label>
         </div>
       </div>
-      <pv-button @click="create()" type="submit" label="REGISTRARME" class="form-container__button mt-4 mb-5" />
+      <pv-button type="submit" label="REGISTRARME" class="form-container__button mt-4 mb-5 " />
       <div class="field-footer">
         <label class="field-footer__label-1">No te enviaremos spam. Valoramos tu privacidad</label>
         <router-link to="/login" class="field-footer__label-2">¿Ya tienes una cuenta? Iniciar Sesión</router-link>
@@ -169,7 +142,7 @@ export default {
 }
 
 .divider-overlay__content {
-  background-color: var(--bg-body-color);
+  background-color: #fff;
   padding: 20px;
 }
 
@@ -180,6 +153,7 @@ export default {
 
 .form-container__field {
   margin-bottom: 15px;
+  border: 2px solid rgba(0, 0, 255, 0.1);
 }
 
 .form-container__name-field {

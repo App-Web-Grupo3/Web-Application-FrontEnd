@@ -6,11 +6,13 @@ const value2 = ref(1);
 </script>
 
 <template>
-  <div class="save">
-    <router-link class="field-checkbox__label-3" to="/home/service-info">
-      <pv-button class="btn" label="Mas Detalles" @click="visible = true"/>
+
+    <router-link to="/service-info/:activityId">
+        <div class="save">
+            <pv-button class="btn" label="Mas Detalles"  @click="visible = true" />
+        </div>
     </router-link>
-  </div>
+
 </template>
 
 <style scoped>

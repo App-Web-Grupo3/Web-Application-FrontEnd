@@ -1,0 +1,98 @@
+{
+  "enterprises": [
+    {
+      "id": 1,
+      "name": "TravelNew",
+      "email": "travelnew@gmail.com",
+      "description": "Si eres una persona que le gusta la adrenalina, el alpinismo es lo tuyoven a Huandoy y realiza este divertido y extremos deporte, tambien lo puedenrealizar los principiantes ya que contamos con todos los medios de seguridadpara evitar accidentes.",
+      "ruc": "123456789",
+      "phone": "+51 952364789",
+      "representative_id": 1,
+      "location": "Av. Los Incas 123",
+      "profile_picture": "imagen1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Enterprise2",
+      "email": "enterprise2@gmail.com",
+      "description": "Si eres una persona que le gusta la adrenalina, el alpinismo es lo tuyoven a Huandoy y realiza este divertido y extremos deporte, tambien lo puedenrealizar los principiantes ya que contamos con todos los medios de seguridadpara evitar accidentes.",
+      "ruc": "123456789",
+      "phone": "+51 952364789",
+      "representative_id": 2,
+      "location": "Av. Los Incas 123",
+      "profile_picture": "imagen2.jpg"
+    }
+  ],
+  "activities": [
+    {
+      "id": 1,
+      "title": "Época de escalamiento en Huandoy, alpinismo para principiantes",
+      "description": "Si eres una persona que le gusta la adrenalina, el alpinismo es lo tuyoven a Huandoy y realiza este divertido y extremos deporte, tambien lo puedenrealizar los principiantes ya que contamos con todos los medios de seguridadpara evitar accidentes.",
+      "discount": 0.5,
+      "percentage": 50,
+      "restriction": "No aplica con otras promociones",
+      "people": 10,
+      "price": 100,
+      "enterprise_id": 1
+    },
+    {
+      "id": 2,
+      "title": "Época de escalamiento en Huandoy principiantes",
+      "description": "Si eres una persona que le gusta la adrenalina, el alpinismo es lo tuyoven a Huandoy y realiza este divertido y extremos deporte, tambien lo puedenrealizar los principiantes ya que contamos con todos los medios de seguridadpara evitar accidentes.",
+      "discount": 0.6,
+      "percentage": 60,
+      "restriction": "No aplica con otras promociones",
+      "people": 10,
+      "price": 110,
+      "enterprise_id": 2
+    },
+    {
+      "id": 3,
+      "title": "Época de alpinismo para principiantes",
+      "description": "Si eres una persona que le gusta la adrenalina, el alpinismo es lo tuyoven a Huandoy y realiza este divertido y extremos deporte, tambien lo puedenrealizar los principiantes ya que contamos con todos los medios de seguridadpara evitar accidentes.",
+      "discount": 0.7,
+      "percentage": 70,
+      "restriction": "No aplica con otras promociones",
+      "people": 10,
+      "price": 120,
+      "enterprise_id": 3
+    }
+  ],
+  "images": [
+    {
+      "id": 1,
+      "url": "imagen1.jpg",
+      "activity_id": 1
+    },
+    {
+      "id": 2,
+      "url": "imagen2.jpg",
+      "activity_id": 1
+    },
+    {
+      "id": 3,
+      "url": "imagen1.jpg",
+      "activity_id": 1
+    },
+    {
+      "id": 4,
+      "url": "imagen2.jpg",
+      "activity_id": 1
+    },
+    {
+      "id": 5,
+      "url": "imagen1.jpg",
+      "activity_id": 2
+    },
+    {
+      "id": 6,
+      "url": "imagen2.jpg",
+      "activity_id": 2
+    },
+    {
+      "id": 7,
+      "url": "imagen3.jpg",
+      "activity_id": 2
+    }
+  ]
+}

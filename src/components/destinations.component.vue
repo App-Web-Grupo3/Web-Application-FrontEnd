@@ -5,34 +5,16 @@ export default {
 </script>
 
 <template>
-  <section id="destinations" class="destin">
-    <div class="container">
-      <h1 class="lp-title">Popular Destinations</h1>
-      <div class="destin-content">
-        <div class="lp-card">
-          <img alt="La Montaña de Siete Colores" src="https://picsum.photos/id/1015/400/300">
-          <div class="info">
-            <h2>La Montaña de Siete Colores, Perú</h2>
-            <p>Admira los colores vibrantes de la cordillera de los Andes</p>
-            <a class="lp-btn" href="#">Ver más</a>
-          </div>
-        </div>
-        <div class="lp-card">
-          <img alt="Choquequirao" src="https://picsum.photos/id/1024/400/300">
-          <div class="info">
-            <h2>Choquequirao, Perú</h2>
-            <p>Descubre las ruinas incas más impresionantes en los Andes peruanos</p>
-            <a class="lp-btn" href="#">Ver más</a>
-          </div>
-        </div>
-        <div class="lp-card">
-          <img alt="Laguna de los Cóndores" src="https://picsum.photos/id/1018/400/300">
-          <div class="info">
-            <h2>Laguna de los Cóndores, Perú</h2>
-            <p>Explora la reserva natural y admira la belleza de la fauna y flora local</p>
-            <a class="lp-btn" href="#">Ver más</a>
-          </div>
-        </div>
+
+  <section class="destinations" id="destinations">
+    <h2 class="destinations__title">Destinos populares</h2>
+    <div class="destinations__container">
+      <div class="destination">
+        <img alt="La Montaña de Siete Colores" class="destination__img" src="https://picsum.photos/id/1015/400/300">
+        <h3 class="destination__title">La Montaña de Siete Colores, Perú</h3>
+        <p class="destination__paragraph">Admira los colores vibrantes de la cordillera de los Andes</p>
+        <pv-button class="btn" href="#">Comprar</pv-button>
+
       </div>
     </div>
   </section>

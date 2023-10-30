@@ -1,6 +1,43 @@
 <script>
 export default {
   name: "HeaderComponent",
+
+  methods: {
+    scrollToSection(id) {
+      let section = document.getElementById(id);
+      if (section && section.id === id) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  },
+  data() {
+    return {
+      menuItems: [
+        {
+          label: this.$t('home'),
+          icon: 'pi pi-home',
+          command: () => this.scrollToSection('welcome')
+        },
+        {
+          label: this.$t('destinations'),
+          icon: 'pi pi-globe',
+          to: '/destinations',
+          command: () => this.scrollToSection('destinations')
+        },
+        {
+          label: this.$t('login'),
+          icon: 'pi pi-user',
+          to: '/login'
+        },
+        {
+          label: this.$t('contactUs'),
+          icon: 'pi pi-envelope',
+          to: '/contact-us'
+        }
+      ]
+    };
+  }
+
 };
 </script>
 

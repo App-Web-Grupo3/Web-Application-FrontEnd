@@ -7,11 +7,16 @@ import ContactUsComponent from "@/components/contact-us.component.vue";
 </script>
 
 <template>
-  <header-component></header-component>
-  <home-welcome-component></home-welcome-component>
-  <destinations-component></destinations-component>
-  <contact-us-component></contact-us-component>
-  <footer-component></footer-component>
+
+  <header>
+    <header-component></header-component>
+  </header>
+  <main>
+    <home-welcome-component></home-welcome-component>
+    <destinations-component></destinations-component>
+    <footer-component></footer-component>
+  </main>
+
 </template>
 
 <style scoped>
