@@ -1,107 +1,174 @@
 <script>
 export default {
-  name: "DestinationsComponent",
+    name: "DestinationsComponent",
 }
 </script>
 
 <template>
-
-  <section class="destinations" id="destinations">
-    <h2 class="destinations__title">Destinos populares</h2>
-    <div class="destinations__container">
-      <div class="destination">
-        <img alt="La Montaña de Siete Colores" class="destination__img" src="https://picsum.photos/id/1015/400/300">
-        <h3 class="destination__title">La Montaña de Siete Colores, Perú</h3>
-        <p class="destination__paragraph">Admira los colores vibrantes de la cordillera de los Andes</p>
-        <pv-button class="btn" href="#">Comprar</pv-button>
-
-      </div>
-    </div>
-  </section>
-  <section id="testimonials" class="testi">
-    <div class="container">
-      <h1 class="lp-title">User Testimonials</h1>
-      <div class="testi-content">
-        <div class="lp-card">
-          <p class="comment">"¡Mi viaje con Unique Trips fue increíble! Descubrí lugares asombrosos que nunca hubiera
-            encontrado por mi cuenta."</p>
-          <p class="user">- Juan Pérez</p>
+    <section class="destinations" id="destinations">
+        <h2 class="destinations__title">Destinos populares</h2>
+        <div class="destinations__container">
+            <div class="destination">
+                <img alt="La Montaña de Siete Colores" class="destination__img" src="https://picsum.photos/id/1015/400/300">
+                <h3 class="destination__title">La Montaña de Siete Colores, Perú</h3>
+                <p class="destination__paragraph">Admira los colores vibrantes de la cordillera de los Andes</p>
+                <pv-button class="btn" href="#">Comprar</pv-button>
+            </div>
+            <div class="destination">
+                <img alt="Choquequirao" class="destination__img" src="https://picsum.photos/id/1024/400/300">
+                <h3 class="destination__title">Choquequirao, Perú</h3>
+                <p class="destination__paragraph">Descubre las ruinas incas más impresionantes en los Andes peruanos</p>
+                <pv-button class="btn" href="#">Comprar</pv-button>
+            </div>
+            <div class="destination">
+                <img alt="Laguna de los Cóndores" class="destination__img" src="https://picsum.photos/id/1018/400/300">
+                <h3 class="destination__title">Laguna de los Cóndores, Perú</h3>
+                <p class="destination__paragraph">Explora la reserva natural y admira la belleza de la fauna y flora local</p>
+                <pv-button class="btn" href="#">Comprar</pv-button>
+            </div>
         </div>
-        <div class="lp-card">
-          <p class="comment">"La agencia de viajes Unique Trips superó mis expectativas. Viajar nunca fue tan sencillo y
-            emocionante."</p>
-          <p class="user">- María González</p>
-        </div>
-        <div class="lp-card">
-          <p class="comment">"La agencia de viajes Unique Trips superó mis expectativas. Viajar nunca fue tan sencillo y
-            emocionante."</p>
-          <p class="user">- María González</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 </template>
 
 <style scoped>
-.destin {
-  padding-top: 9%;
+.destinations {
+    background-color: #f5f5f5;
+    padding: 80px 0;
+    text-align: center;
+    margin: 30px;
+}
 
-  .destin-content {
+.destinations__title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.destinations__container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: space-evenly;
+}
 
-    .lp-card {
-      max-width: min(30rem, 100%);
+.destination {
+    width: 30%;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-      & img {
+.destination__img {
+    width: 100vw;
+    border-radius: 10px;
+}
+
+.destination__title {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.destination__paragraph {
+    color: #777;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+    outline: none;
+}
+
+.btn.p-button:not(.p-disabled):hover {
+    background-color: #555;
+    border: 2px solid transparent;
+}
+
+.btn.p-button:focus,
+.p-button:focus {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.7);
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .destination {
         width: 100%;
-        border-radius: 10px 10px 0 0;
-      }
-
-      .info {
-        padding: 1.5rem;
-        text-align: center;
-
-        & h2 {
-          font-size: 1.5em;
-          margin-bottom: 1rem;
-          font-weight: bold;
-        }
-
-        & p {
-          font-size: 1em;
-          color: #777;
-          width: 70%;
-          margin: 0 auto;
-        }
-      }
     }
-  }
-}
 
-.testi {
-  .testi-content {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+    .destination__img {
+        width: 80vw;
+        border-radius: 10px;
+    }
 
-    .lp-card {
-      padding: 1rem;
-      max-width: 40rem;
+    .destination__title {
+        font-size: 2rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
 
-      .comment {
-        font-size: 1.2em;
-        margin-bottom: 1rem;
-      }
-
-      .user {
-        font-size: 1em;
+    .destination__paragraph {
         color: #777;
-      }
+        font-size: 1.3rem;
+        margin-bottom: 20px;
     }
-  }
+
+    .btn {
+        display: inline-block;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.2s ease-in-out;
+    }
 }
+
+@media screen and (min-width: 900px) {
+    .destinations__container {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .destination {
+        width: 30vw;
+        margin: 0 10px 50px 10px;
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .destination__img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .btn {
+        display: inline-block;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.2s ease-in-out;
+    }
+}
+
 </style>
