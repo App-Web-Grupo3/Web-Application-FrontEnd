@@ -8,6 +8,8 @@ const value = ref('');
 const value2 = ref(1);
 const value3 = ref(null);
 const value4 = ref(null);
+const value5 = ref(null);
+const value6 = ref(null);
 const visible = ref(false);
 </script>
 
@@ -17,7 +19,7 @@ const visible = ref(false);
     <pv-button class="btn" label="Pagar Oferta"  @click="visible = true" />
 
 
-    <pv-dialog v-model:visible="visible" modal header="Pagar Servicio" :style="{ width: '50rem' }"
+    <pv-dialog v-model:visible="visible" modal header="Pagar Servicio" :style="{ width: '80rem' }"
                :breakpoints="{ '960px': '75vw', '641px': '100vw' }">
 
       <h1> Servicio Seleccionado </h1>
@@ -39,6 +41,7 @@ const visible = ref(false);
           </div>
         </template>
       </pv-card>
+
       <br><h1> Métodos de Pago </h1><br>
       <div class="card flex flex-wrap justify-content-left gap-3">
         <span class="p-input-icon-left">
@@ -54,13 +57,13 @@ const visible = ref(false);
 
       <div class="card flex flex-wrap justify-content-left gap-3">
         <span class="p-input-icon-left">
-            <pv-inputText class= "pay" v-model="value4" placeholder="MM/AA" />
+            <pv-inputText class= "pay" v-model="value5" placeholder="MM/AA" />
             </span>
       </div>
 
       <div class="card flex flex-wrap justify-content-left gap-3">
         <span class="p-input-icon-left">
-            <pv-inputText class= "pay" v-model="value4" placeholder="CVC/CVV" />
+            <pv-inputText class= "pay" v-model="value6" placeholder="CVC/CVV" />
             </span>
       </div>
 
