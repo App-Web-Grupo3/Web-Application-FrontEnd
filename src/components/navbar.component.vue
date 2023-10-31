@@ -9,7 +9,6 @@ const items = ref([
   {separator: true},
   {label: 'Sign Out', icon: 'pi pi-sign-out', to: '/'}
 ]);
-
 const toggle = (event) => {
   menu.value.toggle(event);
 };
@@ -22,17 +21,17 @@ const value1 = ref(null);
     <pv-toolbar class="navbar-container">
       <template #start>
         <div class="btn-menu">
-          <pv-avatar class="mr-2" icon="pi pi-user" shape="circle" size="large"/>
+          <pv-avatar class="mr-2" icon="pi pi-home" shape="circle" size="large"/>
           <pv-button aria-controls="overlay_menu" aria-haspopup="true" class="btn" icon="pi pi-bars"
                      rounded text type="button" @click="toggle"/>
           <pv-menu id="overlay_menu" ref="menu" :model="items" :popup="true"/>
         </div>
         <div class="btn-chips flex gap-4">
 
-            <router-link to="/home/tourist/hired-service">
+            <router-link to="/home/hired-service">
                 <pv-button id="my-purchases" class="btn" label="Mis compras" icon="pi pi-shopping-bag" text raised rounded/>
             </router-link>
-          <router-link to="/home/favorite-service">
+          <router-link to="/home/favorite-activities">
               <pv-button id="favorites" class="btn" label="Favoritos" icon="pi pi-bookmark-fill" text raised rounded/>
 
           </router-link>

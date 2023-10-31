@@ -26,10 +26,10 @@ export default {
       this.userApi.login(body).then((response) => {
         if (response.data.accessToken){
           if(response.data.user.selectedOption === 'Empresa'){
-            this.$router.push("/enterprise/home");
+            this.$router.push("/en-home");
             console.log('Esta es una empresa')
           }else {
-            this.$router.push("/services-offers");
+            this.$router.push("/home");
             console.log('Este es un turista')
           }
           localStorage.setItem('user', JSON.stringify(response.data.user));

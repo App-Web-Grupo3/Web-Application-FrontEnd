@@ -9,15 +9,19 @@ import {ref} from "vue";
 const services = ref([
   {
     title: "Disfruta con Peruvian Andes Adventures en el nevado Auzangate",
+    id: "1",
   },
   {
     title: "Época de escalamiento en Huandoy, alpinismo para principiantes",
+    id: "2",
   },
   {
     title: "Disfruta de una aventura en la montaña de Huascarán",
+    id: "3",
   },
   {
     title: "Época de escalamiento en Huandoy, alpinismo para principiantes",
+    id: "4",
   },
 ]);
 
@@ -32,7 +36,7 @@ const services = ref([
       </div>
       <div class="end flex gap-5" style="flex-grow: 9999">
         <div class="info layout">
-          <h2 class="title">{{ $t('service') }}</h2>
+          <h2 class="title">{{ $t('activities') }}</h2>
           <pv-button class="btn" label="Ofertas"  @click="visible = true" />
           <div class="flex wrap-gap">
             <div class="grid-components" v-for="(service, index) in services" :key="index">

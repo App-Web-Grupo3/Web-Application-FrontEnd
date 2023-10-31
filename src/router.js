@@ -23,25 +23,13 @@ const routes = [
     {path: "/login", component: LoginComponent},
     {path: "/register", component: RegisterComponent},
     {path: "/contact-us", component: ContactUsComponent},
-
-    {
-        path: '/service-info/:activityId',
-        name: 'service-info',
-        component: ServiceInfoView
-    },
-    {path: "/favorite-service", component: FavoriteServiceView},
-
-
-    {path: "/services-offers", component: ServiceOfferView},
-    {path: "/services-data", component: ServiceDataComponent2},
     {path: "/home", component: ServiceOfferView},
-    {path: "/home/service-info", component: ServiceInfoView},
-    {path: "/home/favorite-service", component: FavoriteServiceView},
-    {path: "/home/tourist/hired-service", component: HiredServicesTourist},
+    {path: "/home/activities/:activityId", component: ServiceInfoView},
+    {path: "/home/favorite-activities", component: FavoriteServiceView},
+    {path: "/home/hired-service", component: HiredServicesTourist},
     {path: "/en-home", component: HomeEnterpriseView},
-    {path: "/en-home/add-service", component: AddServiceView},
-    {path: "/home/company/hired-service", component: HiredServicesCompany},
-
+    {path: "/en-home/add-service", component: AddServiceView },
+    {path: "/en-home/hired-service", component: HiredServicesCompany},
     {path: "/:pathMatch(.*)*", component: NotFoundView},
 ];
 

@@ -17,9 +17,11 @@ const successfulSaved = () => {
   <pv-card class="info" style="width: 300px">
     <template #title>{{ service.title }}</template>
     <template #footer class="footer ">
-      <div class="flex-flex-wrap-gap-2">
-        <CalculateServiceComponent2></CalculateServiceComponent2>
-      </div>
+      <router-link :to="'/home/activities/' + service.id">
+        <div class="save">
+          <pv-button class="btn" label="Mas Detalles"/>
+        </div>
+      </router-link>
     </template>
   </pv-card>
 
@@ -31,9 +33,28 @@ const successfulSaved = () => {
   box-shadow: none;
   padding: 0;
 }
-.flex-flex-wrap-gap-2{
+.save {
   display: flex;
   justify-content: center;
 }
+.btn {
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
 
+ul {
+  padding-top: 1rem;
+}
+
+ul li {
+  font-size: 0.9em;
+}
+
+.save {
+  padding: 10px;
+
+}
 </style>

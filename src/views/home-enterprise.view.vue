@@ -153,7 +153,7 @@ export default {
                   temporada.</p>
               </template>
               <template #footer>
-                  <router-link to="/home/company/hired-service">
+                  <router-link to="/en-home/hired-service">
                       <pv-button icon="pi pi-check" label="Ver clientes" style="font-size: 12px; padding: 4px 8px;"/>
 
                   </router-link>
