@@ -16,6 +16,7 @@ export default {
   },
   methods: {
     create() {
+      this.$router.push("/en-home");//por ahora noma :v
       const body = {
         name: this.name,
         lastname: this.lastname,

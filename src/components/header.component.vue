@@ -24,14 +24,14 @@ export default {
                     command: () => this.scrollToSection('destinations')
                 },
                 {
-                    label: this.$t('login'),
-                    icon: 'pi pi-user',
-                    to: '/login'
-                },
-                {
                     label: this.$t('contactUs'),
                     icon: 'pi pi-envelope',
                     to: '/contact-us'
+                },
+                {
+                  label: this.$t('login'),
+                  icon: 'pi pi-user',
+                  to: '/login'
                 }
             ]
         };

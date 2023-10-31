@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "unique-trips"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }

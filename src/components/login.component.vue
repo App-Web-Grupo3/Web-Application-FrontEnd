@@ -17,6 +17,8 @@ export default {
   },
   methods: {
     login() {
+      this.$router.push("/home");//por ahora noma :v
+
       const body = {
         email: this.email,
         password: this.password,
