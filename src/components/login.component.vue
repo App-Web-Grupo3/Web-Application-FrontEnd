@@ -1,4 +1,3 @@
-
 <script>
 import { UserApiService } from "@/services/user-api.service";
 import FooterComponent from "@/components/footer.component.vue";
@@ -9,40 +8,57 @@ export default {
   components: {FooterComponent},
   data() {
     return {
-      email: "",
-      password: "",
-      accept: false,
-      userApi: new UserApiService()
+      user: {
+        Mail: "",
+        Password: "",
+      }
     };
+  },
+  created() {
+    this.userApi = new UserApiService();
   },
   methods: {
     login() {
-      const body = {
-        email: this.email,
-        password: this.password,
-        accept: this.accept
+      const user = {
+        Mail: this.user.Mail,
+        Password: this.user.Password,
       };
 
-      this.userApi.login(body).then((response) => {
-        if (response.data.accessToken){
-          if(response.data.user.selectedOption === 'Empresa'){
-            this.$router.push("/enterprise/home");
-            console.log('Esta es una empresa')
-          }else {
-            this.$router.push("/services-offers");
-            console.log('Este es un turista')
-          }
-          localStorage.setItem('user', JSON.stringify(response.data.user));
-          /*const type = localStorage.getItem("selectedOption");
-          sessionStorage.setItem("accessToken", response.data.accessToken);
-          this.$router.push("/enterprise/home");*/
-        } else alert("Error en usuario y/o password");
-      })
+      this.userApi
+          .login(user)
+          .then((response) => {
+            if (response && response.data) {
+              const accessToken = response.data.accessToken;
+
+              if (accessToken) {
+                const user = response.data.user;
+                localStorage.setItem('user', JSON.stringify(user));
+                if (response.data.SelectedRole === 'Representative') {
+                  this.$router.push('en-home');
+                  console.log('Esta es una empresa');
+                } else {
+                  this.$router.push('services-offers');
+                  console.log('Este es un turista');
+                }
+                console.log(response.data.accessToken)
+                console.log(response.data)
+                alert("Usuario creado")
+              } else {
+                alert("Token de acceso no encontrado en la respuesta del servidor");
+              }
+            } else {
+              alert("Respuesta del servidor indefinida");
+            }
+          })
           .catch((error) => {
-            alert("Error en usuario y/o password");
+            console.error("Error en el inicio de sesión:", error);
+
+            if (error.response) {
+              console.error("Respuesta del servidor:", error.response.data);
+            }
           });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -57,15 +73,15 @@ export default {
     <div v-focustrap class="card form-container">
       <div class="form-container__field">
 
-        <pv-inputText id="email" v-model="email" type="text" placeholder="Correo electrónico" autofocus />
+        <pv-inputText id="email" v-model="user.Mail" type="text" placeholder="Correo electrónico" autofocus />
       </div>
       <div class="form-container__field">
-        <pv-inputText id="password" v-model="password" type="password" placeholder="Contraseña"/>
+        <pv-inputText id="password" v-model="user.Password" type="password" placeholder="Contraseña"/>
       </div>
       <pv-button @click="login()" type="submit" label="INICIAR SESIÓN" class="form-container__button mt-2 mb-5" />
 
       <div class="field-checkbox">
-        <pv-checkBox id="accept" v-model="accept" name="accept" value="Accept"/>
+        <pv-checkBox id="accept" name="accept" value="Accept"/>
         <label class="field-checkbox__label-1" for="accept">No cerrar sesión</label>
         <router-link class="field-checkbox__label-3" to="/recovery-password">¿Olvidaste tu contraseña?</router-link>
         <router-link class="field-checkbox__label-2" to="/register">¿No tienes una cuenta? Regístrate</router-link>

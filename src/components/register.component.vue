@@ -5,38 +5,57 @@ export default {
   name: "RegisterComponent",
   data() {
     return {
-      name: "",
-      lastname: "",
-      phone: "",
-      email: "",
-      password: "",
-      selectedOption: "",
-      userApi: new UserApiService()
+      user: {
+        Name: "",
+        LastName: "",
+        Mail: "",
+        Password: "",
+        Phone: "",
+        SelectedRole: "",
+      }
     };
+  },
+  created() {
+    this.userApi = new UserApiService();
   },
   methods: {
     create() {
-      const body = {
-        name: this.name,
-        lastname: this.lastname,
-        phone: this.phone,
-        email: this.email,
-        password: this.password,
-        selectedOption: this.selectedOption
+      const user = {
+        Name: this.user.Name,
+        LastName: this.user.LastName,
+        Mail: this.user.Mail,
+        Password: this.user.Password,
+        Phone: this.user.Phone,
+        SelectedRole: this.user.SelectedRole
       };
 
-      this.userApi.register(body).then((response) => {
-        localStorage.setItem("selectedOption", this.selectedOption);
-        if (response.status === 201) {
-          alert("User Created");
+      this.userApi.register(user).then((response) => {
+        console.log(response.json());
+        localStorage.setItem("SelectedRole", this.user.SelectedRole);
+        alert("User Created");
+        this.reset();
+      }).catch((error) => {
+        console.error("Error: ", error);
+        if (error.response && error.response.data) {
+          alert("User not created. Error: " + error.response.data);
         } else {
           alert("User not created, contact administrator");
         }
       });
     },
     selectOption(option) {
-      this.selectedOption = option;
+      this.SelectedRole = option;
     },
+    reset() {
+      this.user = {
+        Name: "",
+        LastName: "",
+        Mail: "",
+        Password: "",
+        Phone: "",
+        SelectedRole: "",
+      }
+    }
   },
 };
 </script>
@@ -51,7 +70,7 @@ export default {
     <div class="radio-row">
       <div class="radio-row__left">
         <div class="radio-row__container flex align-items-center">
-          <pv-radioButton id="radioButton1" name="radioGroup" value="Turista" label="Turista" v-model="selectedOption" @click="selectOption('Turista')"/>
+          <pv-radioButton id="radioButton1" name="radioGroup" value="Tourist" label="Tourist" v-model="user.SelectedRole" @click="selectOption('Tourist')"/>
           <label class="ml-2">Turista</label>
         </div>
       </div>
@@ -62,7 +81,7 @@ export default {
     <div class="radio-row">
       <div class="radio-row__right">
         <div class="radio-row__container flex align-items-center">
-          <pv-radioButton id="radioButton2" name="radioGroup" value="Empresa" label="Empresa" v-model="selectedOption" @click="selectOption('Empresa')"/>
+          <pv-radioButton id="radioButton2" name="radioGroup" value="Representative" label="Representative" v-model="user.SelectedRole" @click="selectOption('Representative')"/>
           <label class="ml-2">Empresa</label>
         </div>
       </div>
@@ -72,19 +91,19 @@ export default {
     <div v-focustrap class="card form-container">
       <div class="form-container__field">
         <div class="form-container__name-field">
-          <pv-inputText id="name" v-model="name" type="text" placeholder="Nombre" autofocus />
-          <pv-inputText id="lastName" v-model="lastname" type="text" placeholder="Apellido"  />
+          <pv-inputText id="name" v-model="user.Name" type="text" placeholder="Nombre" autofocus/>
+          <pv-inputText id="lastName" v-model="user.LastName" type="text" placeholder="Apellido"/>
         </div>
       </div>
       <div class="form-container__field">
-        <pv-inputText id="phone" v-model="phone" type="text" placeholder="Teléfono"/>
+        <pv-inputText id="phone" v-model="user.Phone" type="text" placeholder="Teléfono"/>
       </div>
       <div class="form-container__field">
-        <pv-inputText id="mail" v-model="email" type="text" placeholder="Correo electrónico"/>
+        <pv-inputText id="mail" v-model="user.Mail" type="text" placeholder="Correo electrónico"/>
       </div>
       <div class="form-container__field">
         <div class="p-float-label">
-          <pv-password v-model="password" type="password">
+          <pv-password v-model="user.Password" type="password">
             <template #header>
               <h6>Pick a password</h6>
             </template>
