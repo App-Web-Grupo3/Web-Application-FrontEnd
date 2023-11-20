@@ -1,6 +1,8 @@
+
 <script>
 import { UserApiService } from "@/services/user-api.service";
 import FooterComponent from "@/components/footer.component.vue";
+
 
 export default {
   name: "LoginComponent",
@@ -54,17 +56,19 @@ export default {
   <div class="flex justify-content-center p-fluid">
     <div v-focustrap class="card form-container">
       <div class="form-container__field">
+
         <pv-inputText id="email" v-model="email" type="text" placeholder="Correo electrónico" autofocus />
       </div>
       <div class="form-container__field">
         <pv-inputText id="password" v-model="password" type="password" placeholder="Contraseña"/>
       </div>
       <pv-button @click="login()" type="submit" label="INICIAR SESIÓN" class="form-container__button mt-2 mb-5" />
+
       <div class="field-checkbox">
-        <pv-checkBox id="accept" v-model="accept" name="accept" value="Accept" />
-        <label for="accept" class="field-checkbox__label-1">No cerrar sesión</label>
-        <router-link to="/recovery-password" class="field-checkbox__label-3">¿Olvidaste tu contraseña?</router-link>
-        <router-link to="/register" class="field-checkbox__label-2">¿No tienes una cuenta? Regístrate</router-link>
+        <pv-checkBox id="accept" v-model="accept" name="accept" value="Accept"/>
+        <label class="field-checkbox__label-1" for="accept">No cerrar sesión</label>
+        <router-link class="field-checkbox__label-3" to="/recovery-password">¿Olvidaste tu contraseña?</router-link>
+        <router-link class="field-checkbox__label-2" to="/register">¿No tienes una cuenta? Regístrate</router-link>
       </div>
     </div>
   </div>
@@ -73,7 +77,7 @@ export default {
 
 <style scoped>
 
-.divider{
+.divider {
   padding: 8vh;
 }
 
@@ -101,12 +105,12 @@ export default {
   margin: 0 auto;
 }
 
-.divider2__content{
+.divider2__content {
   margin: 40px;
   font-weight: normal;
 }
 
-.form-container__button{
+.form-container__button {
   background-color: var(--primary-color);
   border-radius: 20px;
 }
@@ -119,6 +123,7 @@ export default {
 .form-container__field {
   margin-bottom: 15px;
 }
+
 .field-checkbox {
   height: 150px;
   align-items: start;

@@ -1,11 +1,12 @@
 <script setup>
-import { ref } from "vue";
+import {ref} from "vue";
 
 const visible = ref(false);
 const value2 = ref(1);
 </script>
 
 <template>
+
     <router-link to="/service-info/:activityId">
         <div class="save">
             <pv-button class="btn" label="Mas Detalles"  @click="visible = true" />
@@ -22,12 +23,15 @@ const value2 = ref(1);
   padding: 10px 20px;
   border-radius: 50px;
 }
+
 ul {
   padding-top: 1rem;
 }
+
 ul li {
   font-size: 0.9em;
 }
+
 .save {
   padding: 10px;
 

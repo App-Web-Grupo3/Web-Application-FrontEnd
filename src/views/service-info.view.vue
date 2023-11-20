@@ -5,6 +5,7 @@ import FooterComponent from "@/components/footer.component.vue";
 import CommentComponent from "@/components/comment-servicio.component.vue";
 import GalleriaComponent from "@/components/services-galleria.component.vue";
 import ServiceDataComponent from "@/components/service-data.component.vue";
+
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { ActivitiesService } from '@/services/activities.service';
@@ -32,6 +33,7 @@ onMounted(() => {
 <template>
   <div class="service-info">
     <navbar-component></navbar-component>
+
     <div class="container">
       <div class="start">
         <tourist-profile-component></tourist-profile-component>
@@ -44,6 +46,7 @@ onMounted(() => {
             <service-data-component
                 :activity="activity"
                 :enterprise="enterprise"></service-data-component>
+
           </div>
         </div>
         <div class="feedback layout">
@@ -66,6 +69,7 @@ onMounted(() => {
 
   .container {
     padding-top: 5%;
+
     justify-content: center;
     display: flex;
     gap: 2rem;

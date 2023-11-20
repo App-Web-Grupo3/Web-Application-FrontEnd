@@ -1,47 +1,75 @@
 <script>
 import NavbarEnterpriseComponent from "@/components/navbar-enterprise.component.vue";
+import {CompanyApi} from "@/services/company.service";
+import { useToast } from "primevue/usetoast";
 
 export default {
-  name: "HomeEmpreComponent",
-  components: {
-    NavbarEnterpriseComponent,
-  }
-  ,
-  data() {
-    return {
-      user: {
-
-      },
-      empresa: {
-        nombre: '',
-        correo: '',
-        descripcion: '',
-        ubicacion: '',
-        ruc: '',
-        telefono: '',
-        imagen: null
-      },
-      dialog_edit: false
-    };
-
-
-  },
-  methods: {
-    submitForm() {
-      console.log(this.empresa);
+    name: "HomeEmpreComponent",
+    components: {
+        NavbarEnterpriseComponent,
     },
-    handleImageUpload(event) {
-      const file = event.target.files[0];
-      this.empresa.imagen = file;
-    }
-  },
-  beforeMount() {
-    //this.user = localStorage.getItem(JSON.parse'user');
-    let o = localStorage.getItem('user');
-    this.user = JSON.parse(o);
-  }
-}
+
+    data() {
+        return {
+            user: {},
+            company: {
+                Name: "",
+                Mail: "",
+                Description: "",
+                Ruc: "",
+                Phone: "",
+                Address: "",
+                ProfilePicture: "https://acortar.link/1W8Buf",
+                RepresentanteId: 1,
+            },
+            dialog_edit: false,
+        };
+    },
+    methods: {
+        submitForm() {
+            console.log("Entró");
+            const servicio = new CompanyApi();
+            console.log(this.company)
+            servicio
+                .post_company(this.company)
+                .then((response) => {
+                    console.log("Inserción exitosa", response);
+                    this.resetForm();
+                    this.dialog_edit = false;
+                })
+                .catch((error) => {
+                    console.error("Error al insertar la compañía", error);
+                });
+        },
+        onUpload(files) {
+            console.log("Entró al upload", files);
+            const file = files[0];
+            file.toBase64().then((base64Data) => {
+                this.company.ProfilePicture = base64Data;
+
+                console.log("Esta es la imagen ",this.company.ProfilePicture)
+            });
+        },
+        resetForm() {
+            this.company = {
+                Name: "",
+                Mail: "",
+                Description: "",
+                Ruc: "",
+                Phone: "",
+                Address: "",
+                ProfilePicture: "",
+                RepresentanteId: 1,
+            };
+        },
+    },
+    setup() {
+        const toast = useToast();
+        return { toast };
+    },
+};
 </script>
+
 <template>
   <div class="div-prin view">
     <navbar-enterprise-component></navbar-enterprise-component>
@@ -51,59 +79,58 @@ export default {
           <h1 class="title"> ¡Bienvenido!</h1>
           <pv-scrollpanel class="custombar1" style="width: 100%; height: 80%;">
             <div class="flex" style=" margin-bottom: 20px;">
-              <div class="img-logo">
-                <img alt="logo" src="https://acortar.link/vFAsSK" style="width: 60%">
-              </div>
+                <div class="img-logo">
+                    <img alt="logo" v-bind:src="company.profilePicture" style="width: 60%">
+                </div>
               <div class="contenido-empresa font-size">
-                <p class="sub">TravelNew</p>
-                <p class="negrita">travelnew@gmailcom</p>
-                <p class="curvo">{{user}}</p>
-
+                <p class="sub">{{ company.Name }}</p>
+                <p class="negrita">{{ company.Mail }}</p>
+                <p class="curvo">{{company.Description}}</p>
+                <p>{{company.ProfilePicture}}</p>
                 <p class="negrita">Ubicación</p>
-                <p> Maecenas ultricies, InNulla.</p>
+                <p> {{company.Address}}</p>
                 <p class="negrita">Ruc</p>
-                <p>641478521</p>
+                <p>{{ company.Ruc }}</p>
                 <p class="negrita">Teléfono</p>
-                <p>+51 952364789 </p>
+                <p>{{company.Phone}} </p>
 
                 <div class="card flex justify-content-center">
-                  <pv-button icon="pi pi-external-link" label="Editar" plain rounded @click="dialog_edit = true"/>
+                  <pv-button icon="pi pi-external-link" label="Registrar" plain rounded @click="dialog_edit = true"/>
                   <pv-dialog v-model:visible="dialog_edit" :style="{ width: '50vw' }" header="Header" modal>
                     <form @submit.prevent="submitForm">
                       <div class="form-group">
                         <label for="nombreEmpresa">Nombre de la Empresa</label>
-                        <pv-inputText id="nombreEmpresa" v-model="empresa.nombre" required type="text"></pv-inputText>
+                        <pv-inputText id="name" v-model.trim="company.Name" required type="text"></pv-inputText>
                       </div>
                       <div class="form-group">
                         <label for="correo">Correo</label>
-                        <pv-inputText id="correo" v-model="empresa.correo" required type="email"></pv-inputText>
+                        <pv-inputText id="mail" v-model="company.Mail" required type="email"></pv-inputText>
                       </div>
                       <div class="form-group">
                         <label for="descripcion">Descripción</label>
-                        <pv-textarea id="descripcion" v-model="empresa.descripcion" required></pv-textarea>
+                        <pv-textarea id="description" v-model="company.Description" required></pv-textarea>
                       </div>
                       <div class="form-group">
                         <label for="ubicacion">Ubicación</label>
-                        <pv-inputText id="ubicacion" v-model="empresa.ubicacion" required></pv-inputText>
+                        <pv-inputText id="address" v-model="company.Address" required></pv-inputText>
                       </div>
                       <div class="form-group">
                         <label for="ruc">RUC</label>
-                        <pv-inputText id="ruc" v-model="empresa.ruc" required></pv-inputText>
+                        <pv-inputText id="ruc" v-model="company.Ruc" required></pv-inputText>
                       </div>
                       <div class="form-group">
                         <label for="telefono">Teléfono</label>
-                        <pv-inputText id="telefono" v-model="empresa.telefono" required type="tel"></pv-inputText>
+                        <pv-inputText id="phone" v-model="company.Phone" required type="tel"></pv-inputText>
                       </div>
                       <div class="form-group">
-                        <pv-toast/>
+                        <pv-toast />
                         <label for="imagen">Imagen</label>
-                        <pv-fileupload id="imagen" accept="image/*" type="file"
-                                       @change="handleImageUpload"></pv-fileupload>
+                          <pv-fileupload mode="basic" name="demo[]" url="/api/upload" accept="image/*" :maxFileSize="1000000" @upload="onUpload" />
                       </div>
                     </form>
                     <template #footer>
-                      <pv-button autofocus icon="pi pi-check" label="Actualizar" type="submit"
-                                 @click="dialog_edit = false"/>
+                      <pv-button autofocus icon="pi pi-check" label="Registrar" type="submit"
+                                 @click="submitForm"/>
                     </template>
                   </pv-dialog>
                 </div>
@@ -164,7 +191,9 @@ export default {
           </div>
         </pv-scrollpanel>
         <div class="btn">
+
           <router-link to="/en-home/add-service">
+
             <pv-button label="Añadir ahora" plain rounded/>
           </router-link>
         </div>
